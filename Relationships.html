@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InnerGymX – Relationships & Inner Connection</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-cream: #f7f4ee;
+      --bg-beige: #fcf9f4;
+      --bg-blush: #e8d9ce;
+      --bg-lavender: #dcd6ea;
+      --text-charcoal: #1a1a1a;
+      --gold: #c8a85c;
+      --white: #ffffff;
+
+      --font-heading: "Playfair Display", serif;
+      --font-subheading: "Cormorant Garamond", serif;
+      --font-body: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-charcoal);
+      background: var(--bg-cream);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* NAV / TOP BAR */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(247, 244, 238, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(200, 168, 92, 0.15);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+      font-size: 0.95rem;
+    }
+
+    .nav-left {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      opacity: 0.75;
+      transition: opacity 0.2s ease, color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+      color: var(--gold);
+    }
+
+    /* HERO */
+    .hero {
+      padding: 4.5rem 0 3.5rem;
+      background: radial-gradient(circle at top left, #e8d9ce 0, transparent 55%), var(--bg-cream);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.9rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(26, 26, 26, 0.65);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.2rem, 3.3vw, 3.1rem);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title span.highlight {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-subheading);
+      font-size: 1.35rem;
+      font-style: italic;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-body {
+      font-size: 0.98rem;
+      max-width: 32rem;
+      margin-bottom: 1.9rem;
+      color: rgba(26, 26, 26, 0.85);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.8rem 1.6rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--white);
+      box-shadow: 0 10px 25px rgba(200, 168, 92, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 35px rgba(200, 168, 92, 0.35);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: rgba(26, 26, 26, 0.3);
+      color: var(--text-charcoal);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-1px);
+    }
+
+    .hero-badge {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: rgba(26, 26, 26, 0.7);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 260px;
+    }
+
+    .hero-circle {
+      inset: 0;
+      background: radial-gradient(circle at 30% 10%, #ffffff 0, #f7f4ee 42%, #e8d9ce 100%);
+      border-radius: 32px;
+      border: 1px solid rgba(200, 168, 92, 0.2);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .hero-image { width: 100%; max-width: 380px; height: auto; border-radius: 24px; box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12); border: 1px solid rgba(200, 168, 92, 0.2); object-fit: cover; }
+
+    .hero-visual-inner {
+      text-align: center;
+    }
+
+    .hero-visual-eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(26, 26, 26, 0.6);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-visual-main {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-visual-caption {
+      font-size: 0.88rem;
+      color: rgba(26, 26, 26, 0.7);
+      max-width: 16rem;
+      margin: 0 auto;
+    }
+
+    /* GENERIC SECTION STYLES */
+    section {
+      padding: 4.2rem 0;
+    }
+
+    .section-heading {
+      font-family: var(--font-heading);
+      font-size: 1.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      color: rgba(26, 26, 26, 0.7);
+      max-width: 34rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .section-eyebrow {
+      font-size: 0.86rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(26, 26, 26, 0.5);
+      margin-bottom: 0.5rem;
+    }
+
+    /* QUIET STRUGGLES */
+    .struggles {
+      background: var(--bg-beige);
+    }
+
+    .struggles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .struggle-card {
+      background: var(--white);
+      border-radius: 22px;
+      padding: 1.4rem 1.3rem;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.03);
+      border: 1px solid rgba(200, 168, 92, 0.16);
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .struggle-tag {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(26, 26, 26, 0.55);
+    }
+
+    .struggle-text {
+      font-size: 0.95rem;
+    }
+
+    /* WHY RELATIONSHIPS FEEL HARD */
+    .why {
+      background: radial-gradient(circle at top right, #e8d9ce 0, transparent 55%), var(--bg-cream);
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .insight-card {
+      background: var(--white);
+      border-radius: 24px;
+      border: 1px solid rgba(200, 168, 92, 0.2);
+      padding: 1.7rem 1.8rem;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.04);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .insight-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(130deg, rgba(200, 168, 92, 0.08), transparent);
+      pointer-events: none;
+    }
+
+    .insight-heading {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .insight-body {
+      font-size: 0.96rem;
+      color: rgba(26, 26, 26, 0.82);
+    }
+
+    .insight-list {
+      margin-top: 0.85rem;
+      font-size: 0.95rem;
+      padding-left: 1.1rem;
+    }
+
+    .insight-list li {
+      margin-bottom: 0.3rem;
+    }
+
+    .why-visual {
+      border-radius: 26px;
+      min-height: 240px;
+      background: radial-gradient(circle at 15% 0, #ffffff 0, #f7f4ee 45%, #e8d9ce 100%);
+      border: 1px solid rgba(200, 168, 92, 0.28);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2.3rem;
+      text-align: center;
+    }
+
+    .why-visual-text {
+      font-family: var(--font-subheading);
+      font-size: 1.2rem;
+      font-style: italic;
+      max-width: 18rem;
+      margin: 0 auto;
+      color: rgba(26, 26, 26, 0.9);
+    }
+
+    /* SIGNATURE SOLUTION */
+    .solution {
+      background: var(--bg-cream);
+    }
+
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.6rem;
+    }
+
+    .feature-card {
+      background: var(--white);
+      border-radius: 24px;
+      border: 1px solid rgba(200, 168, 92, 0.22);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.04);
+      padding: 1.6rem 1.4rem 1.7rem;
+      position: relative;
+    }
+
+    .feature-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      border-radius: 24px 24px 0 0;
+      background: linear-gradient(90deg, var(--gold), #e8d9ce);
+    }
+
+    .feature-title {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .feature-body {
+      font-size: 0.94rem;
+      color: rgba(26, 26, 26, 0.82);
+    }
+
+    .feature-list {
+      list-style: none;
+      margin-top: 0.55rem;
+      font-size: 0.9rem;
+    }
+
+    .feature-list li::before {
+      content: "•";
+      color: var(--gold);
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+
+    .solution-cta {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    /* JOURNEY TIMELINE */
+    .journey {
+      background: linear-gradient(180deg, rgba(220, 214, 234, 0.25), transparent);
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 1.6rem;
+      margin-top: 1.6rem;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 0.4rem;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold), rgba(200, 168, 92, 0.2));
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 1.4rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 0;
+      top: 0.3rem;
+      width: 0.7rem;
+      height: 0.7rem;
+      border-radius: 999px;
+      background: var(--gold);
+      box-shadow: 0 0 0 5px rgba(200, 168, 92, 0.18);
+    }
+
+    .timeline-title {
+      font-family: var(--font-heading);
+      font-size: 1.02rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline-body {
+      font-size: 0.92rem;
+      color: rgba(26, 26, 26, 0.8);
+    }
+
+    /* OUTCOMES */
+    .outcomes {
+      background: var(--bg-beige);
+    }
+
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem 2.5rem;
+      margin-top: 1.3rem;
+    }
+
+    .outcome-item {
+      font-size: 0.96rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .outcome-icon {
+      margin-top: 0.15rem;
+      font-size: 0.9rem;
+      color: var(--gold);
+    }
+
+    /* TESTIMONIALS */
+    .testimonials {
+      background: var(--bg-cream);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .testimonial-card {
+      border-radius: 22px;
+      background: rgba(232, 217, 206, 0.42);
+      padding: 1.4rem 1.3rem 1.5rem;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(200, 168, 92, 0.35);
+    }
+
+    .testimonial-quote {
+      font-family: var(--font-subheading);
+      font-style: italic;
+      font-size: 0.98rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .testimonial-name {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: rgba(26, 26, 26, 0.75);
+    }
+
+    /* FINAL CTA */
+    .final-cta {
+      background: #1a1a1a;
+      color: var(--white);
+      text-align: center;
+      padding: 3.8rem 0;
+    }
+
+    .final-cta .section-eyebrow {
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .final-cta-heading {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .final-cta-subtitle {
+      font-family: var(--font-subheading);
+      font-size: 1.1rem;
+      font-style: italic;
+      margin-bottom: 1.8rem;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .final-cta-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-dark-outline {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    .btn-dark-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--bg-beige);
+      border-top: 1px solid rgba(200, 168, 92, 0.25);
+    }
+
+    .footer-inner {
+      padding: 1.5rem 0 1.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: rgba(26, 26, 26, 0.75);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-grid,
+      .two-column,
+      .cards-3,
+      .struggles-grid,
+      .testimonials-grid,
+      .outcomes-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 3.2rem;
+      }
+
+      .hero-grid {
+        gap: 2.4rem;
+      }
+
+      header {
+        position: static;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-title {
+        font-size: 1.9rem;
+      }
+
+      .section-heading {
+        font-size: 1.6rem;
+      }
+
+      section {
+        padding: 3rem 0;
+      }
+
+      .insight-card,
+      .feature-card,
+      .struggle-card,
+      .testimonial-card {
+        padding: 1.2rem 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER -->
+    <header>
+      <div class="container nav">
+        <div class="nav-left">
+          InnerGymX
+        </div>
+        <nav class="nav-links">
+          <a href="#struggles">Relationship Struggles</a>
+          <a href="#why">Why It Feels Hard</a>
+          <a href="#solution">Our Process</a>
+          <a href="#cta">Start Healing</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero" id="top">
+        <div class="container hero-grid">
+          <div>
+            <div class="hero-eyebrow">Relationships & Emotional Connection</div>
+            <h1 class="hero-title">
+              When your relationships feel heavy, <span class="highlight">it’s not that you’re too much</span>. It’s that your heart is tired of carrying it alone.
+            </h1>
+            <p class="hero-subtitle">
+              Let’s heal the patterns behind your conflicts, loneliness & overgiving — together.
+            </p>
+            <p class="hero-body">
+              You don’t need to become a “different” person to be loved. You need a safe space to untangle your old patterns, understand your needs and build relationships that feel emotionally safe, mutual and nourishing.
+            </p>
+            <div class="hero-actions">
+              <a href="#cta" class="btn btn-primary">Begin Relationship Healing</a>
+              <a href="#contact" class="btn btn-outline">Book a Clarity Call</a>
+            </div>
+            <p class="hero-badge">
+              1:1 companionship · Inner transformation · Relationship pattern rewiring
+            </p>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-circle">
+              <div class="hero-visual-inner">
+                <div class="hero-visual-eyebrow">Inner Connection</div>
+                <img src="Relationships.png" alt="Wellbeing" class="hero-image" />
+                <div class="hero-visual-main">
+                  When you feel safe within,<br />you choose differently outside.
+                </div>
+                <p class="hero-visual-caption">
+                  We work on your relationship with yourself first — so love, boundaries & communication flow from a grounded place.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUIET RELATIONSHIP STRUGGLES -->
+      <section class="struggles" id="struggles">
+        <div class="container">
+          <div class="section-eyebrow">What you might be quietly carrying…</div>
+          <h2 class="section-heading">It’s not that you’re “bad at relationships”. You’re repeating patterns you never got support to heal.</h2>
+          <p class="section-subtitle">
+            If you keep attracting similar dynamics, feel unseen, or are scared of being “too much” or “not enough”, you’re not alone — and you’re not broken. There’s a pattern, and patterns can be re-written.
+          </p>
+
+          <div class="struggles-grid">
+            <div class="struggle-card">
+              <div class="struggle-tag">01</div>
+              <p class="struggle-text">You feel you give more than you receive, and end up feeling drained, taken for granted or unappreciated.</p>
+            </div>
+            <div class="struggle-card">
+              <div class="struggle-tag">02</div>
+              <p class="struggle-text">Conflicts escalate quickly or stay unspoken — either constant fights or silent distance.</p>
+            </div>
+            <div class="struggle-card">
+              <div class="struggle-tag">03</div>
+              <p class="struggle-text">You overthink every message, reaction and word, trying not to “mess things up”.</p>
+            </div>
+            <div class="struggle-card">
+              <div class="struggle-tag">04</div>
+              <p class="struggle-text">You fear abandonment or rejection, so you shrink yourself or tolerate less than you deserve.</p>
+            </div>
+            <div class="struggle-card">
+              <div class="struggle-tag">05</div>
+              <p class="struggle-text">You attract emotionally unavailable people, repeating the same story with different faces.</p>
+            </div>
+            <div class="struggle-card">
+              <div class="struggle-tag">06</div>
+              <p class="struggle-text">Even in a relationship, you feel lonely, unseen or misunderstood — especially when you need support the most.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY RELATIONSHIPS FEEL HARD -->
+      <section class="why" id="why">
+        <div class="container two-column">
+          <div>
+            <div class="section-eyebrow">Root cause clarity</div>
+            <h2 class="section-heading">It’s not that you choose “wrong people”. Your nervous system is choosing what feels familiar.</h2>
+            <p class="section-subtitle">
+              The way you attach, react and protect yourself in relationships is not random. It’s shaped by old experiences, unhealed hurt and stories about your worth and safety.
+            </p>
+
+            <div class="insight-card">
+              <h3 class="insight-heading">Why your relationships may feel stuck or painful</h3>
+              <p class="insight-body">
+                Underneath the surface, there may be:
+              </p>
+              <ul class="insight-list">
+                <li>Attachment patterns that make closeness feel unsafe or overwhelming.</li>
+                <li>Old wounds from family, past partners or friendships that never got processed.</li>
+                <li>Beliefs like “I’m too much”, “I’m hard to love”, or “If I show my real self, they’ll leave”.</li>
+              </ul>
+              <p class="insight-body" style="margin-top: 0.75rem;">
+                At InnerGymX, we don’t just teach communication tips. We help you shift the inner template that decides what you tolerate, what you chase and what you call “love”.
+              </p>
+            </div>
+          </div>
+
+          <div class="why-visual">
+            <p class="why-visual-text">
+              When you feel emotionally safe inside, you stop begging for crumbs and start choosing relationships that honour you.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SIGNATURE INNERGYMX RELATIONSHIP SOLUTION -->
+      <section class="solution" id="solution">
+        <div class="container">
+          <div class="section-eyebrow">InnerGymX approach</div>
+          <h2 class="section-heading">Companionship for your heart, not just advice for your mind.</h2>
+          <p class="section-subtitle">
+            We combine counselling, inner child & identity work, nervous system regulation and practical boundaries — so you can experience relationships that feel lighter, kinder and more mutual.
+          </p>
+
+          <div class="cards-3">
+            <article class="feature-card">
+              <h3 class="feature-title">Emotional Companionship</h3>
+              <p class="feature-body">
+                You don’t have to decode your emotions alone. You’re gently held, witnessed and guided, especially on your hardest days.
+              </p>
+              <ul class="feature-list">
+                <li>A safe space to say the “unacceptable” thoughts out loud.</li>
+                <li>Reflection that helps you see your patterns without shame.</li>
+                <li>Support during breaking points, not just in theory sessions.</li>
+              </ul>
+            </article>
+
+            <article class="feature-card">
+              <h3 class="feature-title">Inner Relationship Work</h3>
+              <p class="feature-body">
+                We work on the relationship you have with yourself — your self-talk, guilt, people-pleasing and boundaries.
+              </p>
+              <ul class="feature-list">
+                <li>Inner child & attachment pattern awareness.</li>
+                <li>Shifting self-blame into self-understanding.</li>
+                <li>Learning to feel, express and hold your emotions with kindness.</li>
+              </ul>
+            </article>
+
+            <article class="feature-card">
+              <h3 class="feature-title">Practical Relationship Blueprint</h3>
+              <p class="feature-body">
+                Together we design how you show up differently: in conversations, in conflicts, in choosing partners and in setting limits.
+              </p>
+              <ul class="feature-list">
+                <li>Healthy boundaries that don’t feel harsh or selfish.</li>
+                <li>Simple scripts to express needs & feelings without drama.</li>
+                <li>Choosing from self-worth instead of fear of being alone.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="solution-cta">
+            <a href="#cta" class="btn btn-primary">Explore the Relationship Journey</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- JOURNEY TIMELINE -->
+      <section class="journey">
+        <div class="container">
+          <div class="section-eyebrow">The inner strategy</div>
+          <h2 class="section-heading">Your 5-step relationship healing journey inside InnerGymX</h2>
+          <p class="section-subtitle">
+            A supportive, non-judgemental process to move you from repeating painful dynamics to experiencing nourishing, grounded connection.
+          </p>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <h3 class="timeline-title">Step 1 · Relationship Pattern Mapping</h3>
+              <p class="timeline-body">
+                We gently map your past and present relationship patterns — what keeps repeating, what triggers you, and what your heart has been craving.
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <h3 class="timeline-title">Step 2 · Emotional & Nervous System Safety</h3>
+              <p class="timeline-body">
+                You learn to calm your body during conflict, anxiety and overthinking — so you’re not reacting from panic, but responding from presence.
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <h3 class="timeline-title">Step 3 · Inner Relationship Repair</h3>
+              <p class="timeline-body">
+                We work on your self-worth, guilt, shame and inner critic — shifting how you speak to yourself and what you believe you deserve.
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <h3 class="timeline-title">Step 4 · Boundaries, Communication & Choices</h3>
+              <p class="timeline-body">
+                You practice expressing needs, setting boundaries and making choices that honour your emotional reality — not just keep the peace.
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <h3 class="timeline-title">Step 5 · Integration with Companion Support</h3>
+              <p class="timeline-body">
+                As you try new ways of relating, you’re not alone. We review real-life situations, refine responses and support you through the discomfort of change.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- OUTCOMES -->
+      <section class="outcomes">
+        <div class="container">
+          <div class="section-eyebrow">Who you become in love</div>
+          <h2 class="section-heading">When your inner world softens, your relationships transform.</h2>
+          <p class="section-subtitle">
+            This is about more than “fixing” one relationship. It’s about becoming someone who feels emotionally safe, respected and deeply connected — with others and with yourself.
+          </p>
+
+          <div class="outcomes-grid">
+            <div class="outcome-item">
+              <div class="outcome-icon">✓</div>
+              <p>More emotionally aware and less reactive in conflicts.</p>
+            </div>
+            <div class="outcome-item">
+              <div class="outcome-icon">✓</div>
+              <p>A calmer nervous system that doesn’t panic at distance or honesty.</p>
+            </div>
+            <div class="outcome-item">
+              <div class="outcome-icon">✓</div>
+              <p>Healthier boundaries that protect your energy without guilt.</p>
+            </div>
+            <div class="outcome-item">
+              <div class="outcome-icon">✓</div>
+              <p>Richer conversations where you feel heard, not just “managed”.</p>
+            </div>
+            <div class="outcome-item">
+              <div class="outcome-icon">✓</div>
+              <p>More self-respect in who you choose, and what you no longer accept.</p>
+            </div>
+            <div class="outcome-item">
+              <div class="outcome-icon">✓</div>
+              <p>Less loneliness — even when you’re by yourself.</p>
+            </div>
+            <div class="outcome-item">
+              <div class="outcome-icon">✓</div>
+              <p>A deeper, kinder relationship with your own heart.</p>
+            </div>
+            <div class="outcome-item">
+              <div class="outcome-icon">✓</div>
+              <p>Relationships that feel like a safe home, not a battlefield.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS (placeholders) -->
+      <section class="testimonials">
+        <div class="container">
+          <div class="section-eyebrow">Stories from the inner heart gym</div>
+          <h2 class="section-heading">Real shifts in how people love and are loved.</h2>
+          <p class="section-subtitle">
+            Replace these placeholders with real words and faces when you’re ready. For now, they hold the kind of transformation we’re aiming for.
+          </p>
+
+          <div class="testimonials-grid">
+            <article class="testimonial-card">
+              <p class="testimonial-quote">
+                “I stopped begging for bare minimum. I now know how to express what I feel, and I’m no longer scared of being ‘too much’.”
+              </p>
+              <p class="testimonial-name">Client Name · Role / City</p>
+            </article>
+            <article class="testimonial-card">
+              <p class="testimonial-quote">
+                “Our fights used to explode. Now I know how to pause, regulate and speak my truth without burning everything down.”
+              </p>
+              <p class="testimonial-name">Client Name · Role / City</p>
+            </article>
+            <article class="testimonial-card">
+              <p class="testimonial-quote">
+                “I walked away from patterns that hurt me for years. For the first time, I feel like I choose love from self-worth, not fear.”
+              </p>
+              <p class="testimonial-name">Client Name · Role / City</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL CTA -->
+      <section class="final-cta" id="cta">
+        <div class="container">
+          <div class="section-eyebrow">Next step</div>
+          <h2 class="final-cta-heading">If your heart is tired of repeating the same story, let’s write a kinder one.</h2>
+          <p class="final-cta-subtitle">
+            You don’t have to choose between love and self-respect. We’ll build relationships where both can exist.
+          </p>
+          <div class="final-cta-actions">
+            <a href="#contact" class="btn btn-primary">Begin Relationship Healing</a>
+            <a href="#contact" class="btn btn-dark-outline">Talk to Us</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT ANCHOR (simple placeholder) -->
+      <section id="contact" style="padding: 3rem 0;">
+        <div class="container">
+          <div class="section-eyebrow">Contact</div>
+          <h2 class="section-heading">Book a clarity call</h2>
+          <p class="section-subtitle">
+            Replace this block with your form embed (Typeform, Google Form, Calendly, etc.), or keep it simple with email/WhatsApp for now.
+          </p>
+          <p style="font-size: 0.98rem;">
+            Email: <a href="mailto:info@thinkfitclub.in">info@thinkfitclub.in</a><br />
+            Website: <a href="https://thinkfitclub.in" target="_blank" rel="noopener">https://thinkfitclub.in</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container footer-inner">
+        <div>© <span id="year"></span> InnerGymX · All rights reserved.</div>
+        <div class="footer-links">
+          <a href="#top">Back to top</a>
+          <a href="#struggles">Relationships</a>
+          <a href="#contact">Connect</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Auto-set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

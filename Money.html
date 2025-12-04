@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InnerGymX – Wealth, Career & Financial Expansion</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* DESIGN SYSTEM - WEALTH EDITION 
+       Retaining the premium InnerGymX aesthetic.
+       Gold accents work perfectly for a wealth-focused page.
+    */
+    :root {
+      --bg-cream: #f7f4ee;
+      --bg-beige: #fcf9f4;
+      --bg-blush: #e8d9ce; 
+      --text-charcoal: #1a1a1a;
+      --gold: #c8a85c;
+      --white: #ffffff;
+
+      --font-heading: "Playfair Display", serif;
+      --font-subheading: "Cormorant Garamond", serif;
+      --font-body: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+      --max-width: 1100px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); color: var(--text-charcoal); background: var(--bg-cream); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .page { min-height: 100vh; }
+    .container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
+
+    /* NAV */
+    header { position: sticky; top: 0; z-index: 20; background: rgba(247, 244, 238, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(200, 168, 92, 0.15); }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 0; font-size: 0.95rem; }
+    .nav-left { font-family: var(--font-heading); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; font-size: 0.95rem; }
+    .nav-links { display: flex; gap: 1.5rem; font-size: 0.9rem; }
+    .nav-links a { opacity: 0.75; transition: opacity 0.2s ease, color 0.2s ease; }
+    .nav-links a:hover { opacity: 1; color: var(--gold); }
+
+    /* HERO */
+    .hero { padding: 4.5rem 0 3.5rem; background: radial-gradient(circle at top left, #e8d9ce 0, transparent 55%), var(--bg-cream); }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 3rem; align-items: center; }
+    .hero-eyebrow { font-size: 0.9rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(26, 26, 26, 0.65); margin-bottom: 0.75rem; }
+    .hero-title { font-family: var(--font-heading); font-size: clamp(2.2rem, 3.3vw, 3.1rem); line-height: 1.2; margin-bottom: 1rem; }
+    .hero-title span.highlight { color: var(--gold); font-style: italic; }
+    .hero-subtitle { font-family: var(--font-subheading); font-size: 1.35rem; font-style: italic; margin-bottom: 1.25rem; }
+    .hero-body { font-size: 0.98rem; max-width: 32rem; margin-bottom: 1.9rem; color: rgba(26, 26, 26, 0.85); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.9rem; }
+    
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.8rem 1.6rem; border-radius: 999px; border: 1px solid transparent; font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; cursor: pointer; transition: all 0.2s ease; text-decoration: none; }
+    .btn-primary { background: var(--gold); border-color: var(--gold); color: var(--white); box-shadow: 0 10px 25px rgba(200, 168, 92, 0.25); }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 14px 35px rgba(200, 168, 92, 0.35); }
+    .btn-outline { background: transparent; border-color: rgba(26, 26, 26, 0.3); color: var(--text-charcoal); }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-1px); }
+    .hero-badge { margin-top: 1rem; font-size: 0.85rem; color: rgba(26, 26, 26, 0.7); }
+
+    .hero-visual { position: relative; min-height: 260px; }
+    .hero-circle {  inset: 0; background: radial-gradient(circle at 30% 10%, #ffffff 0, #f7f4ee 42%, #e8d9ce 100%); border-radius: 32px; border: 1px solid rgba(200, 168, 92, 0.2); box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12); display: flex; align-items: center; justify-content: center; padding: 2rem; }
+    .hero-image { width: 100%; max-width: 380px; height: auto; border-radius: 24px; box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12); border: 1px solid rgba(200, 168, 92, 0.2); object-fit: cover; }
+    .hero-visual-inner { text-align: center; }
+    .hero-visual-eyebrow { font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(26, 26, 26, 0.6); margin-bottom: 0.75rem; }
+    .hero-visual-main { font-family: var(--font-heading); font-size: 1.35rem; margin-bottom: 0.75rem; }
+    .hero-visual-caption { font-size: 0.88rem; color: rgba(26, 26, 26, 0.7); max-width: 16rem; margin: 0 auto; }
+
+    /* SECTIONS */
+    section { padding: 4.2rem 0; }
+    .section-heading { font-family: var(--font-heading); font-size: 1.9rem; margin-bottom: 1rem; }
+    .section-subtitle { font-size: 1rem; color: rgba(26, 26, 26, 0.7); max-width: 34rem; margin-bottom: 2.2rem; }
+    .section-eyebrow { font-size: 0.86rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(26, 26, 26, 0.5); margin-bottom: 0.5rem; }
+
+    /* STRUGGLES */
+    .struggles { background: var(--bg-beige); }
+    .struggles-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+    .struggle-card { background: var(--white); border-radius: 22px; padding: 1.4rem 1.3rem; box-shadow: 0 18px 40px rgba(0, 0, 0, 0.03); border: 1px solid rgba(200, 168, 92, 0.16); display: flex; flex-direction: column; gap: 0.45rem; }
+    .struggle-tag { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(26, 26, 26, 0.55); }
+    .struggle-text { font-size: 0.95rem; }
+
+    /* WHY */
+    .why { background: radial-gradient(circle at top right, #e8d9ce 0, transparent 55%), var(--bg-cream); }
+    .two-column { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 2.5rem; align-items: center; }
+    .insight-card { background: var(--white); border-radius: 24px; border: 1px solid rgba(200, 168, 92, 0.2); padding: 1.7rem 1.8rem; box-shadow: 0 20px 45px rgba(0, 0, 0, 0.04); position: relative; overflow: hidden; }
+    .insight-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(130deg, rgba(200, 168, 92, 0.08), transparent); pointer-events: none; }
+    .insight-heading { font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 0.75rem; }
+    .insight-body { font-size: 0.96rem; color: rgba(26, 26, 26, 0.82); }
+    .insight-list { margin-top: 0.85rem; font-size: 0.95rem; padding-left: 1.1rem; }
+    .insight-list li { margin-bottom: 0.3rem; }
+    .why-visual { border-radius: 26px; min-height: 240px; background: radial-gradient(circle at 15% 0, #ffffff 0, #f7f4ee 45%, #e8d9ce 100%); border: 1px solid rgba(200, 168, 92, 0.28); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08); display: flex; align-items: center; justify-content: center; padding: 2.3rem; text-align: center; }
+    .why-visual-text { font-family: var(--font-subheading); font-size: 1.2rem; font-style: italic; max-width: 18rem; margin: 0 auto; color: rgba(26, 26, 26, 0.9); }
+
+    /* SOLUTION */
+    .solution { background: var(--bg-cream); }
+    .cards-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.6rem; }
+    .feature-card { background: var(--white); border-radius: 24px; border: 1px solid rgba(200, 168, 92, 0.22); box-shadow: 0 20px 45px rgba(0, 0, 0, 0.04); padding: 1.6rem 1.4rem 1.7rem; position: relative; }
+    .feature-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 6px; border-radius: 24px 24px 0 0; background: linear-gradient(90deg, var(--gold), #e8d9ce); }
+    .feature-title { font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 0.6rem; }
+    .feature-body { font-size: 0.94rem; color: rgba(26, 26, 26, 0.82); }
+    .feature-list { list-style: none; margin-top: 0.55rem; font-size: 0.9rem; }
+    .feature-list li::before { content: "•"; color: var(--gold); display: inline-block; width: 1em; margin-left: -1em; }
+    .solution-cta { margin-top: 2rem; display: flex; justify-content: flex-start; }
+
+    /* JOURNEY */
+    .journey { background: linear-gradient(180deg, rgba(220, 214, 234, 0.25), transparent); }
+    .timeline { position: relative; padding-left: 1.6rem; margin-top: 1.6rem; }
+    .timeline::before { content: ""; position: absolute; left: 0.4rem; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--gold), rgba(200, 168, 92, 0.2)); }
+    .timeline-item { position: relative; padding-left: 1.4rem; margin-bottom: 1.4rem; }
+    .timeline-dot { position: absolute; left: 0; top: 0.3rem; width: 0.7rem; height: 0.7rem; border-radius: 999px; background: var(--gold); box-shadow: 0 0 0 5px rgba(200, 168, 92, 0.18); }
+    .timeline-title { font-family: var(--font-heading); font-size: 1.02rem; margin-bottom: 0.2rem; }
+    .timeline-body { font-size: 0.92rem; color: rgba(26, 26, 26, 0.8); }
+
+    /* OUTCOMES */
+    .outcomes { background: var(--bg-beige); }
+    .outcomes-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.7rem 2.5rem; margin-top: 1.3rem; }
+    .outcome-item { font-size: 0.96rem; display: flex; align-items: flex-start; gap: 0.5rem; }
+    .outcome-icon { margin-top: 0.15rem; font-size: 0.9rem; color: var(--gold); }
+
+    /* TESTIMONIALS */
+    .testimonials { background: var(--bg-cream); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+    .testimonial-card { border-radius: 22px; background: rgba(232, 217, 206, 0.42); padding: 1.4rem 1.3rem 1.5rem; box-shadow: 0 18px 45px rgba(0, 0, 0, 0.04); border: 1px solid rgba(200, 168, 92, 0.35); }
+    .testimonial-quote { font-family: var(--font-subheading); font-style: italic; font-size: 0.98rem; margin-bottom: 0.8rem; }
+    .testimonial-name { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(26, 26, 26, 0.75); }
+
+    /* FINAL CTA & FOOTER */
+    .final-cta { background: #1a1a1a; color: var(--white); text-align: center; padding: 3.8rem 0; }
+    .final-cta .section-eyebrow { color: rgba(255, 255, 255, 0.55); }
+    .final-cta-heading { font-family: var(--font-heading); font-size: 2rem; margin-bottom: 0.9rem; }
+    .final-cta-subtitle { font-family: var(--font-subheading); font-size: 1.1rem; font-style: italic; margin-bottom: 1.8rem; color: rgba(255, 255, 255, 0.78); }
+    .final-cta-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    .btn-dark-outline { background: transparent; color: var(--white); border-color: rgba(255, 255, 255, 0.35); }
+    .btn-dark-outline:hover { border-color: var(--gold); color: var(--gold); background: rgba(255, 255, 255, 0.04); }
+    
+    footer { background: var(--bg-beige); border-top: 1px solid rgba(200, 168, 92, 0.25); }
+    .footer-inner { padding: 1.5rem 0 1.8rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; font-size: 0.85rem; color: rgba(26, 26, 26, 0.75); }
+    .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-grid, .two-column, .cards-3, .struggles-grid, .testimonials-grid, .outcomes-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 3.2rem; }
+      .hero-grid { gap: 2.4rem; }
+      header { position: static; }
+      .nav { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+    }
+    @media (max-width: 600px) {
+      .hero-title { font-size: 1.9rem; }
+      .section-heading { font-size: 1.6rem; }
+      section { padding: 3rem 0; }
+      .insight-card, .feature-card, .struggle-card, .testimonial-card { padding: 1.2rem 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="container nav">
+        <div class="nav-left">InnerGymX</div>
+        <nav class="nav-links">
+          <a href="#struggles">The Block</a>
+          <a href="#why">The Root Cause</a>
+          <a href="#solution">Quantum Leap</a>
+          <a href="#cta">Start Now</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="top">
+        <div class="container hero-grid">
+          <div>
+            <div class="hero-eyebrow">Wealth Mindset & Career Expansion</div>
+            <h1 class="hero-title">
+              You’re not stuck because you lack talent. <span class="highlight">You’re stuck because your internal thermostat is set to 'survival'.</span>
+            </h1>
+            <p class="hero-subtitle">
+              Rewire your mind for 10X growth, manifest your dream role, and shatter the glass ceiling.
+            </p>
+            <p class="hero-body">
+              Whether you are facing a career crisis, unemployment, or an income plateau—hard work alone isn't the answer. We help you shift your identity, dissolve money blocks, and position yourself to receive the wealth you actually deserve.
+            </p>
+            <div class="hero-actions">
+              <a href="#cta" class="btn btn-primary">Unlock Financial Flow</a>
+              <a href="#contact" class="btn btn-outline">Book a Strategy Call</a>
+            </div>
+            <p class="hero-badge">
+              Subconscious Reprogramming · Career Strategy · 10X Wealth Codes
+            </p>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-circle">
+              <div class="hero-visual-inner">
+                <div class="hero-visual-eyebrow">Identity Shift</div>
+                <img src="Money.png" alt="Money" class="hero-image" />
+                <div class="hero-visual-main">
+                  Your bank account is a mirror<br />of your self-worth.
+                </div>
+                <p class="hero-visual-caption">
+                  To earn 10X, you must first become the person who believes 10X is normal.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="struggles" id="struggles">
+        <div class="container">
+          <div class="section-eyebrow">If this sounds like you, you’re in the right place… </div>
+          <h2 class="section-heading">It’s not that you’re “not capable”. Your money and career story is running on old settings.</h2>
+          <p class="section-subtitle">
+            You have the skills and the drive, yet the results don't match your effort. This gap isn't a failure of capability—it's a misalignment of energy and strategy.
+          </p>
+
+          <div class="struggles-grid">
+            <div class="struggle-card">
+              <div class="struggle-tag">01</div>
+              <p class="struggle-text">**The Income Plateau:** No matter how hard you work or how many hours you put in, your bank balance stays roughly the same.</p>
+            </div>
+            <div class="struggle-card">
+              <div class="struggle-tag">02</div>
+              <p class="struggle-text">**Job Market Invisibility:** You apply for roles you are perfect for, but face ghosting, rejection, or silence.</p>
+            </div>
+            <div class="struggle-card">
+              <div class="struggle-tag">03</div>
+              <p class="struggle-text">**Imposter Syndrome:** You are terrified to ask for a raise or charge higher rates because you secretly fear you aren't "worth it."</p>
+            </div>
+            <div class="struggle-card">
+              <div class="struggle-tag">04</div>
+              <p class="struggle-text">**Career Crisis:** You feel trapped in a role that drains your soul, but fear that leaving means financial ruin.</p>
+            </div>
+            <div class="struggle-card">
+              <div class="struggle-tag">05</div>
+              <p class="struggle-text">**Scarcity Loop:** You panic about money constantly, making decisions from fear rather than power.</p>
+            </div>
+            <div class="struggle-card">
+              <div class="struggle-tag">06</div>
+              <p class="struggle-text">**Over-Giving:** You habitually undercharge and over-deliver, hoping it will make people value you (it rarely does).</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="why" id="why">
+        <div class="container two-column">
+          <div>
+            <div class="section-eyebrow">The Hidden Block</div>
+            <h2 class="section-heading">You don't manifest what you want. You manifest what you *are*.</h2>
+            <p class="section-subtitle">
+              If your subconscious mind believes money is scarce or that success is dangerous, it will sabotage every opportunity you get.
+            </p>
+
+            <div class="insight-card">
+              <h3 class="insight-heading">Why "Hustle Culture" is failing you</h3>
+              <p class="insight-body">
+                Strategy without the right internal programming is useless. Your blocks likely come from:
+              </p>
+              <ul class="insight-list">
+                <li>**Family Imprinting:** "Money doesn't grow on trees" or "Rich people are greedy."</li>
+                <li>**Deservability Wounds:** Deep down, feeling you must suffer to earn money.</li>
+                <li>**Safety Mechanisms:** Staying small feels safer to your nervous system than being seen and wealthy.</li>
+              </ul>
+              <p class="insight-body" style="margin-top: 0.75rem;">
+                At InnerGymX, we fuse **Practical Career Strategy** with **Subconscious Reprogramming**. We clear the path so your action actually yields results.
+              </p>
+            </div>
+          </div>
+
+          <div class="why-visual">
+            <p class="why-visual-text">
+              When your inner identity upgrades, the kind of money, work and chances you attract naturally upgrade too.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="solution" id="solution">
+        <div class="container">
+          <div class="section-eyebrow">InnerGymX Approach</div>
+          <h2 class="section-heading">From "Stuck" to Quantum Leap.</h2>
+          <p class="section-subtitle">
+            We don't just update your resume. We update your operating system to a version that attracts wealth naturally.
+          </p>
+
+          <div class="cards-3">
+            <article class="feature-card">
+              <h3 class="feature-title">Money Trauma Release</h3>
+              <p class="feature-body">
+                Identify and dissolve the specific emotional blocks and childhood stories that are repelling money from your life.
+              </p>
+              <ul class="feature-list">
+                <li>Mapping your early money imprints (family, culture, failures).</li>
+                <li>Spotting hidden loyalty to struggle, sacrifice or “smallness”.</li>
+                <li>Creating a new inner script about what’s possible for you.</li>
+              </ul>
+            </article>
+
+            <article class="feature-card">
+              <h3 class="feature-title">The 10X Identity Shift</h3>
+              <p class="feature-body">
+                You cannot outperform your self-image. We help you embody the version of you who *already* has the job and the income.
+              </p>
+              <ul class="feature-list">
+                <li>Confidence & Charisma activation by Clarifying your strengths, values and marketable skills.</li>
+                <li>Designing a clear, realistic plan for your next 90 days.</li>
+                <li>Acting from power, not desperation.</li>
+              </ul>
+            </article>
+
+            <article class="feature-card">
+              <h3 class="feature-title">Strategic Magnetism</h3>
+              <p class="feature-body">
+                Practical steps taken from a high-vibe state. Positioning yourself as the "Prize" in the market, not the beggar.
+              </p>
+              <ul class="feature-list">
+                <li>Tools to handle rejection, uncertainty and delays without collapsing.</li>
+                <li>Expanding your “capacity to receive” without self-sabotage.</li>
+                <li>Attracting opportunities vs chasing them.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="solution-cta">
+            <a href="#cta" class="btn btn-primary">Claim Your Worth</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="journey">
+        <div class="container">
+          <div class="section-eyebrow">The Inner Strategy</div>
+          <h2 class="section-heading">The 5-Step Wealth Expansion Roadmap</h2>
+          <p class="section-subtitle">
+            A step-by-step process designed for people who feel stuck, scared or behind — and are ready to shift from survival to expansion.
+          </p>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <h3 class="timeline-title">Step 1 · Money & Career Story Mapping</h3>
+              <p class="timeline-body">
+                We understand your journey so far — income patterns, job experiences, failures, breaks, fears and dreams — without judgement.Then we analyze where you are leaking power and money. Is it your skills? Your mindset? Or your energetic boundaries?
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <h3 class="timeline-title">Step 2 · Money Blueprint Audit & Subconscious Clearing</h3>
+              <p class="timeline-body">
+                We identify the beliefs, identity labels and emotional triggers that quietly decide what you apply for, ask for and accept.We use deep inner work to remove the "glass ceiling" in your mind and tell your nervous system that it is SAFE to be wealthy.
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <h3 class="timeline-title">Step 3 · Nervous System & Confidence Build</h3>
+              <p class="timeline-body">
+                You learn to regulate fear, shame and comparison — so you can take bold steps without freezing or quitting midway.
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <h3 class="timeline-title">Step 4 · Magnetic Action</h3>
+              <p class="timeline-body">
+                Applying for jobs, pitching clients, or asking for raises—but from a frequency of certainty, which changes the outcome entirely.
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <h3 class="timeline-title">Step 5 · Receiving & Expanding</h3>
+              <p class="timeline-body">
+                Learning to hold the new level of success without self-sabotaging, and setting the stage for the next leap.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="outcomes">
+        <div class="container">
+          <div class="section-eyebrow">The Transformation</div>
+          <h2 class="section-heading">When you change your frequency, your reality re-arranges itself.</h2>
+          <p class="section-subtitle">
+            This isn't magic (though it feels like it). It's the inevitable result of aligning your psychology with your strategy.
+          </p>
+
+          <div class="outcomes-grid">
+            <div class="outcome-item">
+              <div class="outcome-icon">✓</div>
+              <p>More courage to apply, ask, pitch and negotiate without crumbling inside.</p>
+            </div>
+            <div class="outcome-item">
+              <div class="outcome-icon">✓</div>
+              <p>Manifesting job offers that align with your purpose and pay grade.</p>
+            </div>
+            <div class="outcome-item">
+              <div class="outcome-icon">✓</div>
+              <p>Negotiating salaries with zero guilt and total confidence.</p>
+            </div>
+            <div class="outcome-item">
+              <div class="outcome-icon">✓</div>
+              <p>Breaking through the revenue ceiling you've been stuck at for years.</p>
+            </div>
+            <div class="outcome-item">
+              <div class="outcome-icon">✓</div>
+              <p>Deep peace with money—no more checking the bank app in panic.</p>
+            </div>
+            <div class="outcome-item">
+              <div class="outcome-icon">✓</div>
+              <p>Clarity on your "Zone of Genius" and how to monetize it.</p>
+            </div>
+            <div class="outcome-item">
+              <div class="outcome-icon">✓</div>
+              <p>Attracting high-quality clients or employers who respect you.</p>
+            </div>
+            <div class="outcome-item">
+              <div class="outcome-icon">✓</div>
+              <p>A new inner identity: “I am someone who can grow, earn and rise.”</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials">
+        <div class="container">
+          <div class="section-eyebrow">Stories from the Money GYm</div>
+          <h2 class="section-heading">Real shifts in income, offers and self-belief.</h2>
+          <p class="section-subtitle">
+            Real people who stopped playing small and started living their potential.
+          </p>
+
+          <div class="testimonials-grid">
+            <article class="testimonial-card">
+              <p class="testimonial-quote">
+                “I was unemployed for 8 months, terrified. We worked on my 'worthiness wound' and 3 weeks later, I had two offers at 50% higher pay than my last job.”
+              </p>
+              <p class="testimonial-name">Client Name · Marketing Director</p>
+            </article>
+            <article class="testimonial-card">
+              <p class="testimonial-quote">
+                “I was stuck at a set income for years. We realized I was self-sabotaging because I feared success meant losing my friends. Once we cleared that, I 10X’d my month.”
+              </p>
+              <p class="testimonial-name">Client Name · Consultant</p>
+            </article>
+            <article class="testimonial-card">
+              <p class="testimonial-quote">
+                “I hated my career. InnerGymX gave me the courage to pivot. I’m now doing what I love and making more than I did in my corporate misery.”
+              </p>
+              <p class="testimonial-name">Client Name · Creative Lead</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta" id="cta">
+        <div class="container">
+          <div class="section-eyebrow">Your Permission Slip</div>
+          <h2 class="final-cta-heading">The life you want costs the old version of you.</h2>
+          <p class="final-cta-subtitle">
+            You’re not behind. You’re just one inner shift away from a very different money story. Your next level is waiting.
+          </p>
+          <div class="final-cta-actions">
+            <a href="#contact" class="btn btn-primary">Start Your Wealth Journey</a>
+            <a href="#contact" class="btn btn-dark-outline">Book a Clarity Call</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" style="padding: 3rem 0;">
+        <div class="container">
+          <div class="section-eyebrow">Connect</div>
+          <h2 class="section-heading">Apply for Guidance</h2>
+          <p class="section-subtitle">
+            This is high-touch work for those ready to make a significant shift.
+          </p>
+          <p style="font-size: 0.98rem;">
+            Email: <a href="mailto:info@thinkfitclub.in">info@thinkfitclub.in</a><br />
+            Website: <a href="https://InnerGymX.com" target="_blank" rel="noopener">https://innergymx.com</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <div>© <span id="year"></span> InnerGymX · All rights reserved.</div>
+        <div class="footer-links">
+          <a href="#top">Back to top</a>
+          <a href="#struggles">The Block</a>
+          <a href="#solution">The Solution</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+```

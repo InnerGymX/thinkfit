@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InnerGymX – Goals & Manifestation</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-cream: #f7f4ee;
+      --bg-beige: #fcf9f4;
+      --bg-blush: #e8d9ce;
+      --bg-lavender: #dcd6ea;
+      --text-charcoal: #1a1a1a;
+      --gold: #c8a85c;
+      --white: #ffffff;
+
+      --font-heading: "Playfair Display", serif;
+      --font-subheading: "Cormorant Garamond", serif;
+      --font-body: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-charcoal);
+      background: var(--bg-cream);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* NAV / TOP BAR (optional) */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(247, 244, 238, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(200, 168, 92, 0.15);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+      font-size: 0.95rem;
+    }
+
+    .nav-left {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      opacity: 0.75;
+      transition: opacity 0.2s ease, color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+      color: var(--gold);
+    }
+
+    /* HERO */
+    .hero {
+      padding: 4.5rem 0 3.5rem;
+      background: radial-gradient(circle at top left, #e8d9ce 0, transparent 55%), var(--bg-cream);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.9rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(26, 26, 26, 0.65);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.2rem, 3.3vw, 3.1rem);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title span.highlight {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-subheading);
+      font-size: 1.35rem;
+      font-style: italic;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-body {
+      font-size: 0.98rem;
+      max-width: 32rem;
+      margin-bottom: 1.9rem;
+      color: rgba(26, 26, 26, 0.85);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.8rem 1.6rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--white);
+      box-shadow: 0 10px 25px rgba(200, 168, 92, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 35px rgba(200, 168, 92, 0.35);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: rgba(26, 26, 26, 0.3);
+      color: var(--text-charcoal);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-1px);
+    }
+
+    .hero-badge {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: rgba(26, 26, 26, 0.7);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 260px;
+    }
+
+    .hero-circle {
+      inset: 0;
+      background: radial-gradient(circle at 30% 10%, #ffffff 0, #f7f4ee 42%, #e8d9ce 100%);
+      border-radius: 32px;
+      border: 1px solid rgba(200, 168, 92, 0.2);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .hero-image { width: 100%; max-width: 380px; height: auto; border-radius: 24px; box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12); border: 1px solid rgba(200, 168, 92, 0.2); object-fit: cover; }
+
+    .hero-visual-inner {
+      text-align: center;
+    }
+
+    .hero-visual-eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(26, 26, 26, 0.6);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-visual-main {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-visual-caption {
+      font-size: 0.88rem;
+      color: rgba(26, 26, 26, 0.7);
+      max-width: 16rem;
+      margin: 0 auto;
+    }
+
+    /* GENERIC SECTION STYLES */
+    section {
+      padding: 4.2rem 0;
+    }
+
+    .section-heading {
+      font-family: var(--font-heading);
+      font-size: 1.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      color: rgba(26, 26, 26, 0.7);
+      max-width: 34rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .section-eyebrow {
+      font-size: 0.86rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(26, 26, 26, 0.5);
+      margin-bottom: 0.5rem;
+    }
+
+    /* QUIET STRUGGLES */
+    .struggles {
+      background: var(--bg-beige);
+    }
+
+    .struggles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .struggle-card {
+      background: var(--white);
+      border-radius: 22px;
+      padding: 1.4rem 1.3rem;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.03);
+      border: 1px solid rgba(200, 168, 92, 0.16);
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .struggle-tag {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(26, 26, 26, 0.55);
+    }
+
+    .struggle-text {
+      font-size: 0.95rem;
+    }
+
+    /* WHY MANIFESTATION FAILS */
+    .why {
+      background: radial-gradient(circle at top right, #e8d9ce 0, transparent 55%), var(--bg-cream);
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .insight-card {
+      background: var(--white);
+      border-radius: 24px;
+      border: 1px solid rgba(200, 168, 92, 0.2);
+      padding: 1.7rem 1.8rem;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.04);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .insight-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(130deg, rgba(200, 168, 92, 0.08), transparent);
+      pointer-events: none;
+    }
+
+    .insight-heading {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .insight-body {
+      font-size: 0.96rem;
+      color: rgba(26, 26, 26, 0.82);
+    }
+
+    .insight-list {
+      margin-top: 0.85rem;
+      font-size: 0.95rem;
+      padding-left: 1.1rem;
+    }
+
+    .insight-list li {
+      margin-bottom: 0.3rem;
+    }
+
+    .why-visual {
+      border-radius: 26px;
+      min-height: 240px;
+      background: radial-gradient(circle at 15% 0, #ffffff 0, #f7f4ee 45%, #e8d9ce 100%);
+      border: 1px solid rgba(200, 168, 92, 0.28);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2.3rem;
+      text-align: center;
+    }
+
+    .why-visual-text {
+      font-family: var(--font-subheading);
+      font-size: 1.2rem;
+      font-style: italic;
+      max-width: 17rem;
+      margin: 0 auto;
+      color: rgba(26, 26, 26, 0.9);
+    }
+
+    /* SIGNATURE SOLUTION */
+    .solution {
+      background: var(--bg-cream);
+    }
+
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.6rem;
+    }
+
+    .feature-card {
+      background: var(--white);
+      border-radius: 24px;
+      border: 1px solid rgba(200, 168, 92, 0.22);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.04);
+      padding: 1.6rem 1.4rem 1.7rem;
+      position: relative;
+    }
+
+    .feature-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      border-radius: 24px 24px 0 0;
+      background: linear-gradient(90deg, var(--gold), #e8d9ce);
+    }
+
+    .feature-title {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .feature-body {
+      font-size: 0.94rem;
+      color: rgba(26, 26, 26, 0.82);
+    }
+
+    .feature-list {
+      list-style: none;
+      margin-top: 0.55rem;
+      font-size: 0.9rem;
+    }
+
+    .feature-list li::before {
+      content: "•";
+      color: var(--gold);
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+
+    .solution-cta {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    /* JOURNEY TIMELINE */
+    .journey {
+      background: linear-gradient(180deg, rgba(220, 214, 234, 0.25), transparent);
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 1.6rem;
+      margin-top: 1.6rem;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 0.4rem;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold), rgba(200, 168, 92, 0.2));
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 1.4rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 0;
+      top: 0.3rem;
+      width: 0.7rem;
+      height: 0.7rem;
+      border-radius: 999px;
+      background: var(--gold);
+      box-shadow: 0 0 0 5px rgba(200, 168, 92, 0.18);
+    }
+
+    .timeline-title {
+      font-family: var(--font-heading);
+      font-size: 1.02rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline-body {
+      font-size: 0.92rem;
+      color: rgba(26, 26, 26, 0.8);
+    }
+
+    /* OUTCOMES */
+    .outcomes {
+      background: var(--bg-beige);
+    }
+
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem 2.5rem;
+      margin-top: 1.3rem;
+    }
+
+    .outcome-item {
+      font-size: 0.96rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .outcome-icon {
+      margin-top: 0.15rem;
+      font-size: 0.9rem;
+      color: var(--gold);
+    }
+
+    /* TESTIMONIALS */
+    .testimonials {
+      background: var(--bg-cream);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .testimonial-card {
+      border-radius: 22px;
+      background: rgba(232, 217, 206, 0.42);
+      padding: 1.4rem 1.3rem 1.5rem;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(200, 168, 92, 0.35);
+    }
+
+    .testimonial-quote {
+      font-family: var(--font-subheading);
+      font-style: italic;
+      font-size: 0.98rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .testimonial-name {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: rgba(26, 26, 26, 0.75);
+    }
+
+    /* FINAL CTA */
+    .final-cta {
+      background: #1a1a1a;
+      color: var(--white);
+      text-align: center;
+      padding: 3.8rem 0;
+    }
+
+    .final-cta .section-eyebrow {
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .final-cta-heading {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .final-cta-subtitle {
+      font-family: var(--font-subheading);
+      font-size: 1.1rem;
+      font-style: italic;
+      margin-bottom: 1.8rem;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .final-cta-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-dark-outline {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    .btn-dark-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--bg-beige);
+      border-top: 1px solid rgba(200, 168, 92, 0.25);
+    }
+
+    .footer-inner {
+      padding: 1.5rem 0 1.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: rgba(26, 26, 26, 0.75);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-grid,
+      .two-column,
+      .cards-3,
+      .struggles-grid,
+      .testimonials-grid,
+      .outcomes-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 3.2rem;
+      }
+
+      .hero-grid {
+        gap: 2.4rem;
+      }
+
+      header {
+        position: static;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-title {
+        font-size: 1.9rem;
+      }
+
+      .section-heading {
+        font-size: 1.6rem;
+      }
+
+      section {
+        padding: 3rem 0;
+      }
+
+      .insight-card,
+      .feature-card,
+      .struggle-card,
+      .testimonial-card {
+        padding: 1.2rem 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER -->
+    <header>
+      <div class="container nav">
+        <div class="nav-left">
+          InnerGymX
+        </div>
+        <nav class="nav-links">
+          <a href="#struggles">Quiet Struggles</a>
+          <a href="#why">Why It’s Not Working</a>
+          <a href="#solution">Our Process</a>
+          <a href="#cta">Start Journey</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <main>
+      <section class="hero" id="top">
+        <div class="container hero-grid">
+          <div>
+            <div class="hero-eyebrow">Goals & Manifestation</div>
+            <h1 class="hero-title">
+              When your goals don’t manifest… <span class="highlight">it’s not you</span>. It’s your inner blueprint.
+            </h1>
+            <p class="hero-subtitle">
+              Let’s realign your mind, emotions & energy — together.
+            </p>
+            <p class="hero-body">
+              You don’t need more willpower. You need a safe companion who helps you unclutter your inner world, shift your identity, and make your goals feel like a natural state — not a constant struggle.
+            </p>
+            <div class="hero-actions">
+              <a href="#cta" class="btn btn-primary">Start Your Inner Transformation</a>
+              <a href="#contact" class="btn btn-outline">Book a Clarity Call</a>
+            </div>
+            <p class="hero-badge">
+              1:1 companionship · Inner transformation · Goal & manifestation alignment
+            </p>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-circle">
+              <div class="hero-visual-inner">
+                <div class="hero-visual-eyebrow">Inner Alignment</div>
+                <img src="Goals_manifestation.png" alt="Wellbeing" class="hero-image" />
+                <div class="hero-visual-main">
+                  Your identity, habits & energy<br />moving in the same direction.
+                </div>
+                <p class="hero-visual-caption">
+                  Replace self-sabotage with self-support — and let your nervous system feel safe with growth.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUIET STRUGGLES -->
+      <section class="struggles" id="struggles">
+        <div class="container">
+          <div class="section-eyebrow">What you might be quietly struggling with…</div>
+          <h2 class="section-heading">You’re not lazy. You’re carrying invisible resistance.</h2>
+          <p class="section-subtitle">
+            If you’ve been starting strong and then slipping, looping in overthinking or procrastination, there’s usually a deeper emotional pattern — not a lack of discipline.
+          </p>
+
+          <div class="struggles-grid">
+            <div class="struggle-card">
+              <div class="struggle-tag">01</div>
+              <p class="struggle-text">You start with excitement but lose momentum after a few days or weeks.</p>
+            </div>
+            <div class="struggle-card">
+              <div class="struggle-tag">02</div>
+              <p class="struggle-text">You know what to do, but you still don’t do it — and then blame yourself.</p>
+            </div>
+            <div class="struggle-card">
+              <div class="struggle-tag">03</div>
+              <p class="struggle-text">Your mind feels cluttered with doubts, fears and “what ifs” that drain your energy.</p>
+            </div>
+            <div class="struggle-card">
+              <div class="struggle-tag">04</div>
+              <p class="struggle-text">You try manifesting, visualising, affirming — but your outer reality doesn’t shift.</p>
+            </div>
+            <div class="struggle-card">
+              <div class="struggle-tag">05</div>
+              <p class="struggle-text">You get stuck in loops of procrastination, perfectionism or emotional overwhelm.</p>
+            </div>
+            <div class="struggle-card">
+              <div class="struggle-tag">06</div>
+              <p class="struggle-text">You feel like you’re walking this inner journey alone and wish someone truly “got you”.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY MANIFESTATION ISN'T WORKING -->
+      <section class="why" id="why">
+        <div class="container two-column">
+          <div>
+            <div class="section-eyebrow">Root cause clarity</div>
+            <h2 class="section-heading">It’s not a willpower problem. It’s an inner alignment problem.</h2>
+            <p class="section-subtitle">
+              Every goal has two sides: external actions and internal identity. When they don’t match, your mind naturally resists the change — no matter how badly you say you want it.
+            </p>
+
+            <div class="insight-card">
+              <h3 class="insight-heading">Why your goals may not be manifesting (yet)</h3>
+              <p class="insight-body">
+                Underneath your “inconsistency” there may be:
+              </p>
+              <ul class="insight-list">
+                <li>Old beliefs telling you it’s not safe, not possible, or “not for someone like you”.</li>
+                <li>Emotional clutter — fear, shame, self-doubt — blocking your nervous system from relaxing into action.</li>
+                <li>Habits and environments that silently pull you back to your older identity.</li>
+              </ul>
+              <p class="insight-body" style="margin-top: 0.75rem;">
+                At InnerGymX, we don’t just push you towards your goals. We gently rewire the inner blueprint that decides what you allow yourself to receive.
+              </p>
+            </div>
+          </div>
+
+          <div class="why-visual">
+            <!-- Replace this text with an illustration/image if you like -->
+            <p class="why-visual-text">
+              Manifestation becomes easier when your thoughts, body and emotions feel safe with the future you’re calling in.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SIGNATURE SOLUTION -->
+      <section class="solution" id="solution">
+        <div class="container">
+          <div class="section-eyebrow">InnerGymX approach</div>
+          <h2 class="section-heading">Companionship + Inner Transformation = Sustainable Manifestation</h2>
+          <p class="section-subtitle">
+            This is not just mindset pep talk. It’s a grounded journey through counselling, identity work and nervous system safety — so you can move from knowing to doing, and from forcing to allowing.
+          </p>
+
+          <div class="cards-3">
+            <article class="feature-card">
+              <h3 class="feature-title">Emotional Companionship</h3>
+              <p class="feature-body">
+                You are not doing this alone. You’re walked through the process with warmth, honesty and zero judgement.
+              </p>
+              <ul class="feature-list">
+                <li>Safe space to be unfiltered & real.</li>
+                <li>Reflective conversations that bring hidden patterns to light.</li>
+                <li>Support when you feel like giving up or starting over.</li>
+              </ul>
+            </article>
+
+            <article class="feature-card">
+              <h3 class="feature-title">Inner Transformation Tools</h3>
+              <p class="feature-body">
+                Modern psychology meets inner work — so shifts are felt both mentally and emotionally.
+              </p>
+              <ul class="feature-list">
+                <li>NLP-based identity & belief work.</li>
+                <li>Emotional decluttering & nervous system calming.</li>
+                <li>Gentle rewiring of stories around worth, success & failure.</li>
+              </ul>
+            </article>
+
+            <article class="feature-card">
+              <h3 class="feature-title">Manifestation & Behaviour Blueprint</h3>
+              <p class="feature-body">
+                Your goals are translated into a simple, realistic daily flow that your mind and body can actually follow.
+              </p>
+              <ul class="feature-list">
+                <li>Goal DNA decoding — why this goal truly matters to you.</li>
+                <li>Habit design that respects your real life, not an ideal version.</li>
+                <li>Weekly recalibration & accountability check-ins.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="solution-cta">
+            <a href="#cta" class="btn btn-primary">Explore the Journey</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- JOURNEY TIMELINE -->
+      <section class="journey">
+        <div class="container">
+          <div class="section-eyebrow">The inner strategy</div>
+          <h2 class="section-heading">Your 5-step journey inside InnerGymX</h2>
+          <p class="section-subtitle">
+            A gentle but powerful process to move you from confusion and self-sabotage to clarity, consistency and aligned manifestation.
+          </p>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <h3 class="timeline-title">Step 1 · Clarity Mapping</h3>
+              <p class="timeline-body">
+                We unpack your patterns — where you get stuck, what triggers shutdown, and what your current identity is protecting you from.
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <h3 class="timeline-title">Step 2 · Emotional Declutter</h3>
+              <p class="timeline-body">
+                Together we release the mental noise, emotional heaviness and inner conflicts that keep you looping in the same behaviours.
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <h3 class="timeline-title">Step 3 · Identity Realignment</h3>
+              <p class="timeline-body">
+                We gently shift you into the version of yourself who naturally keeps commitments, feels worthy and feels safe receiving more.
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <h3 class="timeline-title">Step 4 · Behaviour Architecture</h3>
+              <p class="timeline-body">
+                Your big vision becomes a clear, simple daily rhythm — habits that nourish you instead of draining you.
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <h3 class="timeline-title">Step 5 · Companion Accountability</h3>
+              <p class="timeline-body">
+                You’re supported, reflected and nudged with compassion — so implementation becomes lighter, and your nervous system learns that consistency is safe.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- OUTCOMES -->
+      <section class="outcomes">
+        <div class="container">
+          <div class="section-eyebrow">Who you become</div>
+          <h2 class="section-heading">When your inner world aligns, your outer world follows.</h2>
+          <p class="section-subtitle">
+            This isn’t just about hitting a goal. It’s about becoming someone who trusts themselves, honours their energy and feels genuinely supported from within.
+          </p>
+
+          <div class="outcomes-grid">
+            <div class="outcome-item">
+              <div class="outcome-icon">✓</div>
+              <p>Clear-minded and less mentally scattered.</p>
+            </div>
+            <div class="outcome-item">
+              <div class="outcome-icon">✓</div>
+              <p>Emotionally steadier — fewer spirals, quicker recoveries.</p>
+            </div>
+            <div class="outcome-item">
+              <div class="outcome-icon">✓</div>
+              <p>Consistent with the habits that truly matter to you.</p>
+            </div>
+            <div class="outcome-item">
+              <div class="outcome-icon">✓</div>
+              <p>More self-assured and kinder to yourself when you slip.</p>
+            </div>
+            <div class="outcome-item">
+              <div class="outcome-icon">✓</div>
+              <p>Aligned with your goals instead of fighting against them.</p>
+            </div>
+            <div class="outcome-item">
+              <div class="outcome-icon">✓</div>
+              <p>More magnetic to opportunities, people and synchronicities.</p>
+            </div>
+            <div class="outcome-item">
+              <div class="outcome-icon">✓</div>
+              <p>Grounded, calm and less rushed — even while growing.</p>
+            </div>
+            <div class="outcome-item">
+              <div class="outcome-icon">✓</div>
+              <p>Manifestation that finally feels natural, not forced.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS (placeholders) -->
+      <section class="testimonials">
+        <div class="container">
+          <div class="section-eyebrow">Stories from the inner gym</div>
+          <h2 class="section-heading">Real shifts from real humans.</h2>
+          <p class="section-subtitle">
+            Replace these placeholders with your clients’ words and photos when you’re ready. For now, feel the energy of what is possible.
+          </p>
+
+          <div class="testimonials-grid">
+            <article class="testimonial-card">
+              <p class="testimonial-quote">
+                “I stopped starting over every Monday. My mind feels uncluttered, and I actually trust myself to follow through now.”
+              </p>
+              <p class="testimonial-name">Client Name · Role / City</p>
+            </article>
+            <article class="testimonial-card">
+              <p class="testimonial-quote">
+                “This felt less like coaching and more like having a wise, grounded companion who walked with me through all my resistance.”
+              </p>
+              <p class="testimonial-name">Client Name · Role / City</p>
+            </article>
+            <article class="testimonial-card">
+              <p class="testimonial-quote">
+                “The biggest shift wasn’t the goal I hit. It was the way I relate to myself now. Calm, kind and powerful at the same time.”
+              </p>
+              <p class="testimonial-name">Client Name · Role / City</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL CTA -->
+      <section class="final-cta" id="cta">
+        <div class="container">
+          <div class="section-eyebrow">Next step</div>
+          <h2 class="final-cta-heading">If you’re tired of starting over, let’s walk together.</h2>
+          <p class="final-cta-subtitle">
+            InnerGymX isn’t about fixing you. It’s about befriending your inner world so your outer world can finally expand.
+          </p>
+          <div class="final-cta-actions">
+            <a href="#contact" class="btn btn-primary">Begin Inner Transformation</a>
+            <a href="#contact" class="btn btn-dark-outline">Talk to Us</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT ANCHOR (simple placeholder) -->
+      <section id="contact" style="padding: 3rem 0;">
+        <div class="container">
+          <div class="section-eyebrow">Contact</div>
+          <h2 class="section-heading">Book a clarity call</h2>
+          <p class="section-subtitle">
+            Replace this block with your form embed (Typeform, Google Form, Calendly, etc.), or keep it simple with email/WhatsApp for now.
+          </p>
+          <p style="font-size: 0.98rem;">
+            Email: <a href="mailto:info@thinkfitclub.in">info@thinkfitclub.in</a><br />
+            Website: <a href="https://thinkfitclub.in" target="_blank" rel="noopener">https://thinkfitclub.in</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container footer-inner">
+        <div>© <span id="year"></span> InnerGymX · All rights reserved.</div>
+        <div class="footer-links">
+          <a href="#top">Back to top</a>
+          <a href="#struggles">Goals & Manifestation</a>
+          <a href="#contact">Connect</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Auto-set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
