@@ -8,942 +8,8 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <style>
-    :root {
-      --bg-cream: #f7f4ee;
-      --bg-beige: #fcf9f4;
-      --bg-blush: #e8d9ce;
-      --bg-deep: #141414;
-      --text-charcoal: #1a1a1a;
-      --text-muted: rgba(26, 26, 26, 0.7);
-      --gold: #c8a85c;
-      --white: #ffffff;
-
-      --font-heading: "Playfair Display", serif;
-      --font-subheading: "Cormorant Garamond", serif;
-      --font-body: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-
-      --max-width: 1120px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: var(--font-body);
-      color: var(--text-charcoal);
-      background: var(--bg-cream);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .page {
-      min-height: 100vh;
-    }
-
-    .container {
-      width: 100%;
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    /* NAVBAR */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(247, 244, 238, 0.96);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(200, 168, 92, 0.16);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.85rem 0;
-      font-size: 0.9rem;
-      gap: 1rem;
-    }
-
-    .nav-left {
-      display: flex;
-      flex-direction: column;
-      gap: 0.1rem;
-    }
-
-    .brand-name {
-      font-family: var(--font-heading);
-      font-size: 1.1rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    .brand-tagline {
-      font-size: 0.75rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      align-items: center;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .nav-links a {
-      font-size: 0.82rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      opacity: 0.8;
-      transition: color 0.2s ease, opacity 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--gold);
-      opacity: 1;
-    }
-
-    .nav-cta {
-      padding: 0.55rem 1.1rem;
-      border-radius: 999px;
-      border: 1px solid rgba(200, 168, 92, 0.5);
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.09em;
-      background: var(--gold);
-      color: var(--white);
-      box-shadow: 0 8px 20px rgba(200, 168, 92, 0.25);
-      white-space: nowrap;
-    }
-
-    .nav-cta:hover {
-      box-shadow: 0 12px 28px rgba(200, 168, 92, 0.35);
-      transform: translateY(-1px);
-    }
-
-    /* HERO */
-    section {
-      padding: 4.1rem 0;
-    }
-
-    .hero {
-      padding: 4.2rem 0 3.4rem;
-      background: radial-gradient(circle at top left, #e8d9ce 0, transparent 52%), var(--bg-cream);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 3rem;
-      align-items: center;
-    }
-
-    .hero-eyebrow {
-      font-size: 0.85rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 0.75rem;
-    }
-
-    .hero-goodnews {
-      font-family: var(--font-subheading);
-      font-size: 1.05rem;
-      font-style: italic;
-      padding: 0.7rem 1rem;
-      border-radius: 999px;
-      border: 1px solid rgba(200, 168, 92, 0.35);
-      background: rgba(255, 255, 255, 0.95);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .hero-goodnews span.label {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--gold);
-      font-family: var(--font-body);
-    }
-
-    .hero-title {
-      font-family: var(--font-heading);
-      font-size: clamp(2.4rem, 3.4vw, 3.2rem);
-      line-height: 1.15;
-      margin-bottom: 0.9rem;
-    }
-
-    .hero-title span.highlight {
-      color: var(--gold);
-      font-style: italic;
-    }
-
-    .hero-subtitle {
-      font-family: var(--font-subheading);
-      font-size: 1.28rem;
-      font-style: italic;
-      margin-bottom: 1.2rem;
-    }
-
-    .hero-body {
-      font-size: 0.98rem;
-      color: var(--text-muted);
-      max-width: 34rem;
-      margin-bottom: 1.9rem;
-    }
-
-    .hero-promise-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-      margin-bottom: 1.6rem;
-    }
-
-    .promise-pill {
-      font-size: 0.78rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      border-radius: 999px;
-      border: 1px solid rgba(200, 168, 92, 0.45);
-      padding: 0.45rem 0.9rem;
-      background: rgba(255, 255, 255, 0.95);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.9rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.85rem 1.7rem;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.09em;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .btn-primary {
-      background: var(--gold);
-      border-color: var(--gold);
-      color: var(--white);
-      box-shadow: 0 10px 26px rgba(200, 168, 92, 0.28);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 13px 32px rgba(200, 168, 92, 0.35);
-    }
-
-    .btn-outline {
-      background: transparent;
-      border-color: rgba(26, 26, 26, 0.32);
-      color: var(--text-charcoal);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--gold);
-      color: var(--gold);
-      transform: translateY(-1px);
-    }
-
-    .hero-note {
-      font-size: 0.86rem;
-      color: var(--text-muted);
-    }
-
-    .hero-note strong {
-      font-weight: 600;
-    }
-
-    .hero-visual {
-      position: relative;
-      min-height: 280px;
-    }
-
-    .hero-card {
-      inset: 0;
-      border-radius: 32px;
-      border: 1px solid rgba(200, 168, 92, 0.25);
-      background: radial-gradient(circle at 25% 0, #ffffff 0, #f7f4ee 45%, #e8d9ce 100%);
-      box-shadow: 0 26px 60px rgba(0, 0, 0, 0.12);
-      padding: 2.1rem 2rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .hero-card-top-eyebrow {
-      font-size: 0.78rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 0.6rem;
-    }
-
-    .hero-card-content {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.3rem;
-      align-items: center;
-    }
-
-    .hero-card-quote {
-      font-family: var(--font-subheading);
-      font-size: 1.15rem;
-      font-style: italic;
-      margin-bottom: 0.8rem;
-    }
-
-    .hero-card-line {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      max-width: 19rem;
-    }
-
-    .hero-photo {
-      border-radius: 22px;
-      overflow: hidden;
-      border: 1px solid rgba(200, 168, 92, 0.4);
-    }
-
-    .hero-card-bottom {
-      margin-top: 1.5rem;
-      padding-top: 1.1rem;
-      border-top: 1px dashed rgba(200, 168, 92, 0.5);
-      font-size: 0.85rem;
-    }
-
-    .hero-card-tag {
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 0.72rem;
-      color: var(--text-muted);
-    }
-
-    .hero-card-main {
-      font-family: var(--font-heading);
-      margin-top: 0.3rem;
-      font-size: 1.02rem;
-    }
-
-    /* GENERIC SECTION STYLES */
-    .section-eyebrow {
-      font-size: 0.85rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 0.6rem;
-    }
-
-    .section-heading {
-      font-family: var(--font-heading);
-      font-size: 1.95rem;
-      margin-bottom: 1rem;
-    }
-
-    .section-subtitle {
-      font-size: 0.98rem;
-      color: var(--text-muted);
-      max-width: 36rem;
-      margin-bottom: 2rem;
-    }
-
-    /* COMPANION SECTION */
-    .companion {
-      background: var(--bg-beige);
-    }
-
-    .companion-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2.6rem;
-      align-items: flex-start;
-    }
-
-    .companion-card {
-      background: var(--white);
-      border-radius: 24px;
-      padding: 1.8rem 1.7rem;
-      border: 1px solid rgba(200, 168, 92, 0.24);
-      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.04);
-    }
-
-    .list-check {
-      list-style: none;
-      font-size: 0.95rem;
-    }
-
-    .list-check li {
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 0.45rem;
-    }
-
-    .list-check span.icon {
-      font-size: 0.9rem;
-      color: var(--gold);
-      margin-top: 0.1rem;
-    }
-
-    .pill-strip {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1.2rem;
-    }
-
-    .pill {
-      padding: 0.35rem 0.75rem;
-      border-radius: 999px;
-      border: 1px solid rgba(200, 168, 92, 0.45);
-      font-size: 0.78rem;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      background: rgba(255, 255, 255, 0.95);
-    }
-
-    /* CALM & COURAGE SECTION (IMAGES) */
-    .calm-courage {
-      background: radial-gradient(circle at top right, #e8d9ce 0, transparent 55%), var(--bg-cream);
-    }
-
-    .calm-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2.3rem;
-      align-items: center;
-    }
-
-    .image-stack {
-      position: relative;
-      width: 100%;
-      height: 40rem;
-      border-radius: 22px;
-      overflow: hidden;
-      border: 1px solid rgba(200, 168, 92, 0.4);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
-    }
-
-    .image-stack img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
-
-    .image-stack img.active {
-      opacity: 1;
-    }
-
-    .image-card {
-      border-radius: 22px;
-      overflow: hidden;
-      border: 1px solid rgba(200, 168, 92, 0.4);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
-    }
-
-    .image-caption {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      margin-top: 0.4rem;
-    }
-
-    /* FOUR PILLARS */
-    .pillars {
-      background: var(--bg-cream);
-    }
-
-    .pillars-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 1.3rem;
-    }
-
-    .pillar-card {
-      background: var(--white);
-      border-radius: 22px;
-      padding: 1.4rem 1.2rem 1.5rem;
-      border: 1px solid rgba(200, 168, 92, 0.2);
-      box-shadow: 0 16px 38px rgba(0, 0, 0, 0.03);
-      font-size: 0.93rem;
-    }
-
-    .pillar-tag {
-      font-size: 0.78rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 0.4rem;
-    }
-
-    .pillar-title {
-      font-family: var(--font-heading);
-      font-size: 1.05rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .pillar-mini-list {
-      list-style: none;
-      margin-top: 0.4rem;
-      font-size: 0.9rem;
-    }
-
-    .pillar-mini-list li::before {
-      content: "•";
-      color: var(--gold);
-      display: inline-block;
-      width: 1em;
-      margin-left: -1em;
-    }
-
-    /* MODALITIES */
-    .modalities {
-      background: var(--bg-beige);
-    }
-
-    .mod-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.3rem;
-    }
-
-    .mod-card {
-      background: var(--white);
-      border-radius: 22px;
-      padding: 1.4rem 1.2rem 1.5rem;
-      border: 1px solid rgba(200, 168, 92, 0.2);
-      box-shadow: 0 16px 38px rgba(0, 0, 0, 0.03);
-    }
-
-    .mod-label {
-      font-size: 0.8rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 0.4rem;
-    }
-
-    .mod-title {
-      font-family: var(--font-heading);
-      font-size: 1.08rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .mod-text {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    /* HOW IT WORKS */
-    .howitworks {
-      background: linear-gradient(180deg, rgba(220, 214, 234, 0.24), transparent);
-    }
-
-    .how-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2.4rem;
-      align-items: flex-start;
-    }
-
-    .how-card {
-      background: var(--white);
-      border-radius: 24px;
-      border: 1px solid rgba(200, 168, 92, 0.22);
-      padding: 1.8rem 1.7rem;
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.04);
-    }
-
-    .steps-list {
-      list-style: none;
-      font-size: 0.94rem;
-    }
-
-    .steps-list li {
-      margin-bottom: 0.85rem;
-    }
-
-    .steps-list span.step-label {
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 0.78rem;
-      display: block;
-      margin-bottom: 0.1rem;
-      color: var(--gold);
-    }
-
-    .badge-row {
-      margin-top: 1rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
-
-    .badge {
-      font-size: 0.75rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      padding: 0.35rem 0.8rem;
-      border-radius: 999px;
-      border: 1px solid rgba(200, 168, 92, 0.5);
-      background: rgba(255, 255, 255, 0.9);
-    }
-
-    .model-card {
-      background: #1a1a1a;
-      color: var(--white);
-      border-radius: 24px;
-      padding: 1.9rem 1.7rem;
-      box-shadow: 0 22px 48px rgba(0, 0, 0, 0.55);
-    }
-
-    .model-heading {
-      font-family: var(--font-heading);
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .model-sub {
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.8);
-      margin-bottom: 1.1rem;
-    }
-
-    .model-list {
-      list-style: none;
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-    }
-
-    .model-list li {
-      margin-bottom: 0.45rem;
-      display: flex;
-      gap: 0.5rem;
-    }
-
-    .model-list span.icon {
-      font-size: 0.9rem;
-      color: var(--gold);
-      margin-top: 0.15rem;
-    }
-
-    /* WAYS TO WORK */
-    .work-with {
-      background: var(--bg-cream);
-    }
-
-    .work-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-    }
-
-    .work-card {
-      background: var(--white);
-      border-radius: 22px;
-      padding: 1.6rem 1.5rem 1.7rem;
-      border: 1px solid rgba(200, 168, 92, 0.22);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.04);
-      font-size: 0.93rem;
-    }
-
-    .work-title {
-      font-family: var(--font-heading);
-      font-size: 1.15rem;
-      margin-bottom: 0.4rem;
-    }
-
-    /* CALENDAR / BOOKING */
-    .calendar {
-      background: var(--bg-beige);
-    }
-
-    .calendar-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      align-items: flex-start;
-    }
-
-    .calendar-frame {
-      border-radius: 22px;
-      border: 1px solid rgba(200, 168, 92, 0.35);
-      background: var(--white);
-      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.05);
-      padding: 0.75rem;
-    }
-
-    .calendar-placeholder {
-      border-radius: 16px;
-      border: 1px dashed rgba(200, 168, 92, 0.6);
-      padding: 2.1rem 1.6rem;
-      text-align: center;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      background: rgba(252, 249, 244, 0.8);
-    }
-
-    .calendar-placeholder strong {
-      display: block;
-      font-family: var(--font-heading);
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-      color: var(--text-charcoal);
-    }
-
-    .calendar-details {
-      font-size: 0.94rem;
-      color: var(--text-muted);
-    }
-
-    .calendar-details p {
-      margin-bottom: 0.7rem;
-    }
-
-    .contact-block {
-      margin-top: 1.1rem;
-      padding: 1rem 1rem;
-      border-radius: 16px;
-      border: 1px solid rgba(200, 168, 92, 0.35);
-      background: rgba(255, 255, 255, 0.9);
-      font-size: 0.9rem;
-    }
-
-    /* ABOUT */
-    .about {
-      background: var(--bg-cream);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2.6rem;
-      align-items: flex-start;
-    }
-
-    .about-heading-alt {
-      font-family: var(--font-heading);
-      font-size: 1.8rem;
-      margin-bottom: 0.7rem;
-    }
-
-    .about-tag {
-      font-size: 0.9rem;
-      font-style: italic;
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-    }
-
-    .about-text {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      margin-bottom: 0.9rem;
-    }
-
-    .about-highlight {
-      font-size: 0.92rem;
-      padding: 0.9rem 1rem;
-      border-radius: 16px;
-      border: 1px solid rgba(200, 168, 92, 0.45);
-      background: rgba(255, 255, 255, 0.92);
-    }
-
-    .about-meta {
-      font-size: 0.86rem;
-      color: var(--text-muted);
-      margin-top: 0.9rem;
-    }
-
-    .about-meta span {
-      display: inline-block;
-      margin-right: 0.8rem;
-    }
-
-    /* CONTACT SECTION */
-    .contact-section {
-      background: var(--bg-deep);
-      color: var(--white);
-    }
-
-    .contact-inner {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      align-items: flex-start;
-    }
-
-    .contact-inner .section-eyebrow {
-      color: rgba(255, 255, 255, 0.6);
-    }
-
-    .contact-inner .section-heading {
-      color: var(--white);
-    }
-
-    .contact-text {
-      font-size: 0.94rem;
-      color: rgba(255, 255, 255, 0.8);
-      margin-bottom: 1.1rem;
-    }
-
-    .contact-info {
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.9);
-    }
-
-    .contact-info p {
-      margin-bottom: 0.45rem;
-    }
-
-    .contact-info a {
-      text-decoration: underline;
-    }
-
-    .contact-note {
-      margin-top: 0.9rem;
-      font-size: 0.84rem;
-      color: rgba(255, 255, 255, 0.75);
-    }
-
-    .contact-badge {
-      margin-top: 1.1rem;
-      font-size: 0.8rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.7);
-    }
-
-    /* FOOTER MINI */
-    footer {
-      background: #101010;
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 0.78rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .footer-inner {
-      padding: 1.1rem 0 1.4rem;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 1.4rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-    }
-
-    .footer-links a:hover {
-      color: var(--gold);
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 960px) {
-      .hero-grid,
-      .companion-grid,
-      .calm-grid,
-      .pillars-grid,
-      .mod-grid,
-      .how-grid,
-      .work-grid,
-      .calendar-grid,
-      .about-grid,
-      .contact-inner {
-        grid-template-columns: 1fr;
-      }
-
-      header {
-        position: static;
-      }
-
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav-links {
-        justify-content: flex-start;
-      }
-
-      .hero {
-        padding-top: 3.3rem;
-      }
-
-      .hero-visual {
-        min-height: 260px;
-      }
-    }
-
-    @media (max-width: 640px) {
-      section {
-        padding: 3rem 0;
-      }
-
-      .hero-title {
-        font-size: 2rem;
-      }
-
-      .section-heading {
-        font-size: 1.6rem;
-      }
-
-      .pillar-card,
-      .mod-card,
-      .companion-card,
-      .how-card,
-      .model-card,
-      .work-card,
-      .calendar-frame,
-      .contact-block {
-        padding: 1.2rem 1.1rem !important;
-      }
-    }
-  </style>
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body>
   <div class="page">
@@ -977,7 +43,7 @@
 
             <div class="hero-goodnews">
               <span class="label">Good News</span>
-              <span>You don’t need a coach — you need a companion.</span>
+              <span>You don't need a coach — you need a companion.</span>
             </div>
 
             <h1 class="hero-title">
@@ -1024,7 +90,7 @@
                 <div class="hero-card-content">
                   <div>
                     <div class="hero-card-quote">
-                      “When one transforms, the whole world shifts a little higher.”
+                      "When one transforms, the whole world shifts a little higher."
                     </div>
                     <p class="hero-card-line">
                       Every session at InnerGymX is a quiet revolution in how you think, feel and choose — so your personal shift becomes a subtle uplift for everyone you touch.
@@ -1050,20 +116,20 @@
         <div class="container companion-grid">
           <div>
             <div class="section-eyebrow">Why this space feels different</div>
-            <h2 class="section-heading">You don’t need more advice. You need a companion who walks beside you.</h2>
+            <h2 class="section-heading">You don't need more advice. You need a companion who walks beside you.</h2>
             <p class="section-subtitle">
-              Most people aren’t stuck because they don’t know what to do. They’re stuck because no one ever sat with their inner world long enough to understand why they do what they do.
+              Most people aren't stuck because they don't know what to do. They're stuck because no one ever sat with their inner world long enough to understand why they do what they do.
               InnerGymX is built on companionship: a safe space where you can be unfiltered, unedited and fully human — and still deeply held.
             </p>
 
             <ul class="list-check">
               <li>
                 <span class="icon">✓</span>
-                <span><strong>No-judgement land:</strong> Bring the messy, raw, unfiltered you. Nothing here is “too much” or “too late”.</span>
+                <span><strong>No-judgement land:</strong> Bring the messy, raw, unfiltered you. Nothing here is "too much" or "too late".</span>
               </li>
               <li>
                 <span class="icon">✓</span>
-                <span><strong>We go to the root, not just the symptom:</strong> Together we explore the deep subconscious patterns that led to your current health, money, relationship or purpose struggles — and what they’ve been trying to protect.</span>
+                <span><strong>We go to the root, not just the symptom:</strong> Together we explore the deep subconscious patterns that led to your current health, money, relationship or purpose struggles — and what they've been trying to protect.</span>
               </li>
               <li>
                 <span class="icon">✓</span>
@@ -1071,7 +137,7 @@
               </li>
               <li>
                 <span class="icon">✓</span>
-                <span><strong>Companionship with accountability:</strong> You’re not performing for me. You are walking with me.
+                <span><strong>Companionship with accountability:</strong> You're not performing for me. You are walking with me.
                   I hold you with compassion and also keep a loving check so your intentions turn into real-life shifts.</span>
               </li>
             </ul>
@@ -1110,7 +176,7 @@
         <div class="container calm-grid">
           <div>
             <div class="section-eyebrow">Calm & courageous at the same time</div>
-            <h2 class="section-heading">You don’t need to kill your inner child to be peaceful.</h2>
+            <h2 class="section-heading">You don't need to kill your inner child to be peaceful.</h2>
             <p class="section-subtitle">
               InnerGymX honours both sides of you: the part that loves stillness and the part that loves adventure.
               You can be deeply grounded within and wildly explorative outside — one does not cancel the other.
@@ -1175,7 +241,7 @@
               </p>
               <ul class="pillar-mini-list">
                 <li>Patterns of hurt, toxicity or emotional distance.</li>
-                <li>Struggles with saying “no”, or fear of closeness and vulnerability.</li>
+                <li>Struggles with saying "no", or fear of closeness and vulnerability.</li>
                 <li>Creating relationships where you feel safe, seen and cherished.</li>
               </ul>
             </article>
@@ -1187,8 +253,8 @@
                 Your life is asking for a new story — we help you grow the identity that can live it.
               </p>
               <ul class="pillar-mini-list">
-                <li>Feeling lost, behind or “off-track” in life.</li>
-                <li>Knowing you’re meant for more but not sure what or how.</li>
+                <li>Feeling lost, behind or "off-track" in life.</li>
+                <li>Knowing you're meant for more but not sure what or how.</li>
                 <li>Aligning your days with your deeper values and soul purpose.</li>
               </ul>
             </article>
@@ -1197,11 +263,11 @@
               <div class="pillar-tag">Common Thread that links all 4 Pillars· Goal Manifestation using Law of Attraction</div>
               <div class="pillar-title">Turn your Thoughts into Reality</div>
               <!-- <p style="font-size: 0.92rem;">
-                Manifestation isn’t magic — it’s alignment. We help you set goals that feel true to your soul, dissolve the inner blocks that sabotage your progress, and activate the energy that pulls your desires toward you.
+                Manifestation isn't magic — it's alignment. We help you set goals that feel true to your soul, dissolve the inner blocks that sabotage your progress, and activate the energy that pulls your desires toward you.
               </p> -->
               <ul class="pillar-mini-list">
                 <!-- <li>You know exactly what you want — but something silently blocks you from moving.</li>
-                <li>You even know the steps you should take… yet you can’t take consistent action.</li> -->
+                <li>You even know the steps you should take… yet you can't take consistent action.</li> -->
                 <li>Hidden programming still shapes your choices without you realizing it.</li>
                 <li>Here, you get the breakthrough to rewrite that programming at the root level.</li>
               </ul>
@@ -1273,7 +339,7 @@
               <ul class="steps-list">
                 <li>
                   <span class="step-label">Step 01 · Unclutter</span>
-                  We map what’s really happening across your health, money, relationships and purpose — emotionally, mentally and practically.
+                  We map what's really happening across your health, money, relationships and purpose — emotionally, mentally and practically.
                 </li>
                 <li>
                   <span class="step-label">Step 02 · Understand the Root Patterns</span>
@@ -1285,14 +351,14 @@
                 </li>
                 <li>
                   <span class="step-label">Step 04 · Rewire with New Patterns & Gentle Practices</span>
-                  Together we design small, self-chosen practices, reflections and experiments that match who you’re becoming — not who you’ve been.
-                  These are not “homework” to impress anyone:
+                  Together we design small, self-chosen practices, reflections and experiments that match who you're becoming — not who you've been.
+                  These are not "homework" to impress anyone:
                   they are your own self-agreements, chosen by you, for you.
                 </li>
                 <li>
                   <span class="step-label">Step 05 · Rise & Ripple Outward</span>
                   As your inner world clears and strengthens, you notice shifts in your body, money, relationships and sense of purpose.
-                  You become the person through whom “When one transforms, the whole world shifts a little higher” starts feeling true.
+                  You become the person through whom "When one transforms, the whole world shifts a little higher" starts feeling true.
                 </li>
               </ul>
 
@@ -1324,7 +390,7 @@
               </li>
             </ul>
             <p style="font-size: 0.86rem; color: rgba(255,255,255,0.78);">
-              You will never be shamed for “not doing enough”. We celebrate your pace and gently invite your next step.
+              You will never be shamed for "not doing enough". We celebrate your pace and gently invite your next step.
             </p>
           </div> -->
         </div>
@@ -1348,7 +414,7 @@
               </p>
               <ul class="pillar-mini-list" style="margin-top: 0.5rem;">
                 <li>Private, confidential sessions.</li>
-                <li>Space to say things you’ve never said out loud.</li>
+                <li>Space to say things you've never said out loud.</li>
                 <li>Compassionate check-ins so what you realise in sessions shows up in your everyday choices.</li>
               </ul>
             </article>
@@ -1361,13 +427,13 @@
               <ul class="pillar-mini-list" style="margin-top: 0.5rem;">
                 <li>Intimate group size for deep sharing.</li>
                 <li>Shared reflections + individual guidance.</li>
-                <li>A sense of “I’m not alone in this” as everyone rises together.</li>
+                <li>A sense of "I'm not alone in this" as everyone rises together.</li>
               </ul>
             </article>
           </div>
 
           <p style="margin-top: 1.5rem; font-size: 0.92rem; color: var(--text-muted);">
-            Your first session is always <strong>free</strong> — a gentle space for us to understand what you’re carrying and see if this companionship feels right for you.
+            Your first session is always <strong>free</strong> — a gentle space for us to understand what you're carrying and see if this companionship feels right for you.
           </p>
         </div>
       </section>
@@ -1379,7 +445,7 @@
             <div class="section-eyebrow">Book your free first session</div>
             <h2 class="section-heading">Pick a time that feels kind to your nervous system.</h2>
             <p class="section-subtitle">
-              You can directly see my available slots and book a time that works for you. I’m available between <strong>9:00 AM – 9:00 PM (IST)</strong>.
+              You can directly see my available slots and book a time that works for you. I'm available between <strong>9:00 AM – 9:00 PM (IST)</strong>.
             </p>
 
             <div class="calendar-frame">
@@ -1390,7 +456,7 @@
                   Calendly, Zoho Bookings, Google Calendar booking, etc.
                 </p>
                 <p style="margin-top: 0.7rem;">
-                  For now, you can simply mention your preferred days and times in your WhatsApp message, and we’ll confirm a slot manually.
+                  For now, you can simply mention your preferred days and times in your WhatsApp message, and we'll confirm a slot manually.
                 </p>
               </div>
             </div>
@@ -1398,7 +464,7 @@
 
           <div class="calendar-details">
             <p>
-              If you aren’t ready to book yet and just want to ask a question, you’re equally welcome.
+              If you aren't ready to book yet and just want to ask a question, you're equally welcome.
             </p>
             <div class="contact-block">
               <p><strong>WhatsApp for queries & booking:</strong><br />
@@ -1411,7 +477,7 @@
                 9:00 AM – 9:00 PM (IST)
               </p>
               <p style="font-size: 0.86rem; color: var(--text-muted); margin-top: 0.5rem;">
-                This is a quiet, gentle first step — there is no pressure to continue if it doesn’t feel right for you.
+                This is a quiet, gentle first step — there is no pressure to continue if it doesn't feel right for you.
               </p>
             </div>
           </div>
@@ -1425,7 +491,7 @@
             <div class="section-eyebrow">Relatability over perfection</div>
             <h2 class="about-heading-alt">How I am one among you</h2>
             <p class="about-tag">
-              I’m Maanviya — founder of InnerGymX, Emotional Intelligence Expert and specialised Relationship Coach.
+              I'm Maanviya — founder of InnerGymX, Emotional Intelligence Expert and specialised Relationship Coach.
             </p>
             <p class="about-text">
               Before I held space for others, I was simply a human being trying to hold space for myself.
@@ -1438,8 +504,8 @@
               InnerGymX was born from one understanding: <strong>when one human transforms, the world around them shifts a little higher.</strong>
             </p>
             <p class="about-highlight">
-              I’m not here as a perfect guru. I’m here as someone who also had to untangle patterns, heal from hurt and slowly choose a life that actually fits her soul.
-              That’s why I don’t sit above you — I walk beside you.
+              I'm not here as a perfect guru. I'm here as someone who also had to untangle patterns, heal from hurt and slowly choose a life that actually fits her soul.
+              That's why I don't sit above you — I walk beside you.
             </p>
             <p class="about-text">
               Along the way, I trained as an Emotional Intelligence expert and a specialised Relationship Coach,
@@ -1447,7 +513,7 @@
               Every session we share is a mix of heart, skill and structure — rooted in NLP, Emotional Intelligence, Applied Spirituality and the Law of Attraction, customised to your season of life.
             </p>
             <p class="about-text">
-              If you’ve been waiting for a sign that it’s time to unclutter your life and step into who you’re meant to be — consider this your gentle nudge. Let’s walk this chapter together.
+              If you've been waiting for a sign that it's time to unclutter your life and step into who you're meant to be — consider this your gentle nudge. Let's walk this chapter together.
             </p>
             <div class="about-meta">
               <span>📍 Based in India · Working online globally</span>
@@ -1465,13 +531,13 @@
       <section class="contact-section" id="contact">
         <div class="container contact-inner">
           <div>
-            <div class="section-eyebrow">If your heart is whispering “yes”</div>
-            <h2 class="section-heading">Let’s begin with one honest conversation.</h2>
+            <div class="section-eyebrow">If your heart is whispering "yes"</div>
+            <h2 class="section-heading">Let's begin with one honest conversation.</h2>
             <p class="contact-text">
-              You don’t have to have the perfect words or a clear plan. Just bring what you’re carrying — confusion, hope, fear, dreams — and we’ll begin from there.
+              You don't have to have the perfect words or a clear plan. Just bring what you're carrying — confusion, hope, fear, dreams — and we'll begin from there.
             </p>
             <p class="contact-text">
-              Whether you’re feeling stuck in health, money, relationships or purpose, InnerGymX is here to be your companion while you train your mind like you train your body.
+              Whether you're feeling stuck in health, money, relationships or purpose, InnerGymX is here to be your companion while you train your mind like you train your body.
             </p>
             <div class="contact-badge">When one transforms, the whole world shifts a little higher.</div>
           </div>
