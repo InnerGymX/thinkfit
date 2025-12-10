@@ -154,7 +154,7 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      grid-template-columns: 1fr;
       gap: 3rem;
       align-items: center;
     }
@@ -314,7 +314,7 @@
 
     .hero-card-content {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+      grid-template-columns: 1fr;
       gap: 1.3rem;
       align-items: center;
     }
@@ -387,7 +387,7 @@
 
     .companion-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      grid-template-columns: 1fr;
       gap: 2.6rem;
       align-items: flex-start;
     }
@@ -441,7 +441,7 @@
 
     .calm-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      grid-template-columns: 1fr;
       gap: 2.3rem;
       align-items: center;
     }
@@ -449,7 +449,7 @@
     .image-stack {
       position: relative;
       width: 100%;
-      height: 320px;
+      height: 40rem;
       border-radius: 22px;
       overflow: hidden;
       border: 1px solid rgba(200, 168, 92, 0.4);
@@ -491,7 +491,7 @@
 
     .pillars-grid {
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-template-columns: repeat(5, 1fr);
       gap: 1.3rem;
     }
 
@@ -539,7 +539,7 @@
 
     .mod-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 1.3rem;
     }
 
@@ -577,7 +577,7 @@
 
     .how-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+      grid-template-columns: 1fr;
       gap: 2.4rem;
       align-items: flex-start;
     }
@@ -671,7 +671,7 @@
 
     .work-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
     }
 
@@ -697,7 +697,7 @@
 
     .calendar-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+      grid-template-columns: 1fr;
       gap: 2rem;
       align-items: flex-start;
     }
@@ -753,7 +753,7 @@
 
     .about-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      grid-template-columns: 1fr;
       gap: 2.6rem;
       align-items: flex-start;
     }
@@ -804,7 +804,7 @@
 
     .contact-inner {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      grid-template-columns: 1fr;
       gap: 2rem;
       align-items: flex-start;
     }
@@ -951,7 +951,7 @@
     <header>
       <div class="container nav">
         <div class="nav-left">
-          <div class="brand-name">InnerGymX</div>
+          <a href="index.html" class="brand-name">InnerGymX</a>
           <div class="brand-tagline">Train your MIND like you train your BODY.</div>
         </div>
         <nav class="nav-links">
@@ -972,7 +972,7 @@
       <!-- HERO -->
       <section class="hero" id="top">
         <div class="container hero-grid">
-          <div>
+          <div className="be_the_shift_that_lifts_humanity">
             <div class="hero-eyebrow">Be the shift that lifts humanity</div>
 
             <div class="hero-goodnews">
@@ -1014,6 +1014,8 @@
               <strong>*Disclaimer:</strong> InnerGymX is not a magic fix or shortcut. It is deep inner work, aligned action and consistent companionship — so big shifts become naturally possible, not forced.
             </p>
           </div>
+          </div>
+      </section>
 
           <!-- <div class="hero-visual">
             <div class="hero-card">
@@ -1030,7 +1032,7 @@
                   </div>
                   <div class="hero-photo"> -->
                     <!-- Meditating image -->
-                    <!-- <img src="Meditating.png" alt="Maanviya meditating peacefully" />
+                    <!-- <img src="assets/images/Meditating.png" alt="Maanviya meditating peacefully" />
                   </div>
                 </div>
               </div>
@@ -1122,8 +1124,8 @@
             </p>
           </div>
           <div class="image-stack">
-            <img src="Meditating.png" alt="Maanviya meditating in stillness" class="active" />
-            <img src="Skydiving.png" alt="Maanviya skydiving joyfully" />
+            <img src="assets/images/Meditating.png" alt="Maanviya meditating in stillness" class="active" />
+            <img src="assets/images/Skydiving.png" alt="Maanviya skydiving joyfully" />
           </div>
           <div class="image-caption">Inner calm meets outer courage: stillness and adventure, united.</div>
         </div>
@@ -1139,7 +1141,7 @@
           </p>
 
           <div class="pillars-grid">
-            <article class="pillar-card" id="health" onclick="window.location.href='Health_final.html'" style="cursor: pointer;">
+            <article class="pillar-card" id="health" onclick="window.location.href='pages/Health_final.html'" style="cursor: pointer;">
               <div class="pillar-tag">Pillar 01 · Health</div>
               <div class="pillar-title">Mind–Body Health & Inner Calm</div>
               <p style="font-size: 0.92rem;">
@@ -1152,7 +1154,7 @@
               </ul>
             </article>
 
-            <article class="pillar-card" id="money" onclick="window.location.href='Money.html'" style="cursor: pointer;">
+            <article class="pillar-card" id="money" onclick="window.location.href='pages/Money.html'" style="cursor: pointer;">
               <div class="pillar-tag">Pillar 02 · Money & Work</div>
               <div class="pillar-title">10X Your Income, Clarity & Opportunities</div>
               <p style="font-size: 0.92rem;">
@@ -1165,7 +1167,7 @@
               </ul>
             </article>
 
-            <article class="pillar-card" id="relationships" onclick="window.location.href='Relationships.html'" style="cursor: pointer;">
+            <article class="pillar-card" id="relationships" onclick="window.location.href='pages/Relationships.html'" style="cursor: pointer;">
               <div class="pillar-tag">Pillar 03 · Relationships</div>
               <div class="pillar-title">Love, Boundaries & Emotional Safety</div>
               <p style="font-size: 0.92rem;">
@@ -1178,7 +1180,7 @@
               </ul>
             </article>
 
-            <article class="pillar-card" id="purpose" onclick="window.location.href='purpose_and_identity_final.html'" style="cursor: pointer;">
+            <article class="pillar-card" id="purpose" onclick="window.location.href='pages/purpose_and_identity_final.html'" style="cursor: pointer;">
               <div class="pillar-tag">Pillar 04 · Purpose & Identity</div>
               <div class="pillar-title">Who You Are Becoming</div>
               <p style="font-size: 0.92rem;">
@@ -1191,7 +1193,7 @@
               </ul>
             </article>
 
-            <article class="pillar-card" id="purpose" onclick="window.location.href='Goals_manifestation.html'" style="cursor: pointer;">
+            <article class="pillar-card" id="purpose" onclick="window.location.href='pages/Goals_manifestation.html'" style="cursor: pointer;">
               <div class="pillar-tag">Common Thread that links all 4 Pillars· Goal Manifestation using Law of Attraction</div>
               <div class="pillar-title">Turn your Thoughts into Reality</div>
               <!-- <p style="font-size: 0.92rem;">
@@ -1454,7 +1456,7 @@
 
           <div class="image-card">
             <!-- You can keep skydiving or meditating image here; currently using skydiving -->
-            <img src="Skydiving.png" alt="Maanviya skydiving, embracing adventure and freedom" />
+            <!-- <img src="assets/images/Skydiving.png" alt="Maanviya skydiving, embracing adventure and freedom" /> -->
           </div>
         </div>
       </section>
