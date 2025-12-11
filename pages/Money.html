@@ -3,11 +3,157 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>InnerGymX – Money, Career & Abundance</title>
+  <title>InnerGymX – Wealth, Career & Financial Expansion</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="../assets/css/pillar-page.css" />
+  <style>
+    /* DESIGN SYSTEM - WEALTH EDITION 
+       Retaining the premium InnerGymX aesthetic.
+       Gold accents work perfectly for a wealth-focused page.
+    */
+    :root {
+      --bg-cream: #f7f4ee;
+      --bg-beige: #fcf9f4;
+      --bg-blush: #e8d9ce; 
+      --text-charcoal: #1a1a1a;
+      --gold: #c8a85c;
+      --white: #ffffff;
+
+      --font-heading: "Playfair Display", serif;
+      --font-subheading: "Cormorant Garamond", serif;
+      --font-body: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+      --max-width: 1100px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); color: var(--text-charcoal); background: var(--bg-cream); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .page { min-height: 100vh; }
+    .container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
+
+    /* NAV */
+    header { position: sticky; top: 0; z-index: 20; background: rgba(247, 244, 238, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(200, 168, 92, 0.15); }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 0; font-size: 0.95rem; }
+    .nav-left { font-family: var(--font-heading); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; font-size: 0.95rem; }
+    .nav-links { display: flex; gap: 1.5rem; font-size: 0.9rem; }
+    .nav-links a { opacity: 0.75; transition: opacity 0.2s ease, color 0.2s ease; }
+    .nav-links a:hover { opacity: 1; color: var(--gold); }
+
+    /* HERO */
+    .hero { padding: 4.5rem 0 3.5rem; background: radial-gradient(circle at top left, #e8d9ce 0, transparent 55%), var(--bg-cream); }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 3rem; align-items: center; }
+    .hero-eyebrow { font-size: 0.9rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(26, 26, 26, 0.65); margin-bottom: 0.75rem; }
+    .hero-title { font-family: var(--font-heading); font-size: clamp(2.2rem, 3.3vw, 3.1rem); line-height: 1.2; margin-bottom: 1rem; }
+    .hero-title span.highlight { color: var(--gold); font-style: italic; }
+    .hero-subtitle { font-family: var(--font-subheading); font-size: 1.35rem; font-style: italic; margin-bottom: 1.25rem; }
+    .hero-body { font-size: 0.98rem; max-width: 32rem; margin-bottom: 1.9rem; color: rgba(26, 26, 26, 0.85); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.9rem; }
+    
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.8rem 1.6rem; border-radius: 999px; border: 1px solid transparent; font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; cursor: pointer; transition: all 0.2s ease; text-decoration: none; }
+    .btn-primary { background: var(--gold); border-color: var(--gold); color: var(--white); box-shadow: 0 10px 25px rgba(200, 168, 92, 0.25); }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 14px 35px rgba(200, 168, 92, 0.35); }
+    .btn-outline { background: transparent; border-color: rgba(26, 26, 26, 0.3); color: var(--text-charcoal); }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-1px); }
+    .hero-badge { margin-top: 1rem; font-size: 0.85rem; color: rgba(26, 26, 26, 0.7); }
+
+    .hero-visual { position: relative; min-height: 260px; }
+    .hero-circle {  inset: 0; background: radial-gradient(circle at 30% 10%, #ffffff 0, #f7f4ee 42%, #e8d9ce 100%); border-radius: 32px; border: 1px solid rgba(200, 168, 92, 0.2); box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12); display: flex; align-items: center; justify-content: center; padding: 2rem; }
+    .hero-image { width: 100%; max-width: 380px; height: auto; border-radius: 24px; box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12); border: 1px solid rgba(200, 168, 92, 0.2); object-fit: cover; }
+    .hero-visual-inner { text-align: center; }
+    .hero-visual-eyebrow { font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(26, 26, 26, 0.6); margin-bottom: 0.75rem; }
+    .hero-visual-main { font-family: var(--font-heading); font-size: 1.35rem; margin-bottom: 0.75rem; }
+    .hero-visual-caption { font-size: 0.88rem; color: rgba(26, 26, 26, 0.7); max-width: 16rem; margin: 0 auto; }
+
+    /* SECTIONS */
+    section { padding: 4.2rem 0; }
+    .section-heading { font-family: var(--font-heading); font-size: 1.9rem; margin-bottom: 1rem; }
+    .section-subtitle { font-size: 1rem; color: rgba(26, 26, 26, 0.7); max-width: 34rem; margin-bottom: 2.2rem; }
+    .section-eyebrow { font-size: 0.86rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(26, 26, 26, 0.5); margin-bottom: 0.5rem; }
+
+    /* STRUGGLES */
+    .struggles { background: var(--bg-beige); }
+    .struggles-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+    .struggle-card { background: var(--white); border-radius: 22px; padding: 1.4rem 1.3rem; box-shadow: 0 18px 40px rgba(0, 0, 0, 0.03); border: 1px solid rgba(200, 168, 92, 0.16); display: flex; flex-direction: column; gap: 0.45rem; }
+    .struggle-tag { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(26, 26, 26, 0.55); }
+    .struggle-text { font-size: 0.95rem; }
+
+    /* WHY */
+    .why { background: radial-gradient(circle at top right, #e8d9ce 0, transparent 55%), var(--bg-cream); }
+    .two-column { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 2.5rem; align-items: center; }
+    .insight-card { background: var(--white); border-radius: 24px; border: 1px solid rgba(200, 168, 92, 0.2); padding: 1.7rem 1.8rem; box-shadow: 0 20px 45px rgba(0, 0, 0, 0.04); position: relative; overflow: hidden; }
+    .insight-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(130deg, rgba(200, 168, 92, 0.08), transparent); pointer-events: none; }
+    .insight-heading { font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 0.75rem; }
+    .insight-body { font-size: 0.96rem; color: rgba(26, 26, 26, 0.82); }
+    .insight-list { margin-top: 0.85rem; font-size: 0.95rem; padding-left: 1.1rem; }
+    .insight-list li { margin-bottom: 0.3rem; }
+    .why-visual { border-radius: 26px; min-height: 240px; background: radial-gradient(circle at 15% 0, #ffffff 0, #f7f4ee 45%, #e8d9ce 100%); border: 1px solid rgba(200, 168, 92, 0.28); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08); display: flex; align-items: center; justify-content: center; padding: 2.3rem; text-align: center; }
+    .why-visual-text { font-family: var(--font-subheading); font-size: 1.2rem; font-style: italic; max-width: 18rem; margin: 0 auto; color: rgba(26, 26, 26, 0.9); }
+
+    /* SOLUTION */
+    .solution { background: var(--bg-cream); }
+    .cards-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.6rem; }
+    .feature-card { background: var(--white); border-radius: 24px; border: 1px solid rgba(200, 168, 92, 0.22); box-shadow: 0 20px 45px rgba(0, 0, 0, 0.04); padding: 1.6rem 1.4rem 1.7rem; position: relative; }
+    .feature-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 6px; border-radius: 24px 24px 0 0; background: linear-gradient(90deg, var(--gold), #e8d9ce); }
+    .feature-title { font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 0.6rem; }
+    .feature-body { font-size: 0.94rem; color: rgba(26, 26, 26, 0.82); }
+    .feature-list { list-style: none; margin-top: 0.55rem; font-size: 0.9rem; }
+    .feature-list li::before { content: "•"; color: var(--gold); display: inline-block; width: 1em; margin-left: -1em; }
+    .solution-cta { margin-top: 2rem; display: flex; justify-content: flex-start; }
+
+    /* JOURNEY */
+    .journey { background: linear-gradient(180deg, rgba(220, 214, 234, 0.25), transparent); }
+    .timeline { position: relative; padding-left: 1.6rem; margin-top: 1.6rem; }
+    .timeline::before { content: ""; position: absolute; left: 0.4rem; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--gold), rgba(200, 168, 92, 0.2)); }
+    .timeline-item { position: relative; padding-left: 1.4rem; margin-bottom: 1.4rem; }
+    .timeline-dot { position: absolute; left: 0; top: 0.3rem; width: 0.7rem; height: 0.7rem; border-radius: 999px; background: var(--gold); box-shadow: 0 0 0 5px rgba(200, 168, 92, 0.18); }
+    .timeline-title { font-family: var(--font-heading); font-size: 1.02rem; margin-bottom: 0.2rem; }
+    .timeline-body { font-size: 0.92rem; color: rgba(26, 26, 26, 0.8); }
+
+    /* OUTCOMES */
+    .outcomes { background: var(--bg-beige); }
+    .outcomes-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.7rem 2.5rem; margin-top: 1.3rem; }
+    .outcome-item { font-size: 0.96rem; display: flex; align-items: flex-start; gap: 0.5rem; }
+    .outcome-icon { margin-top: 0.15rem; font-size: 0.9rem; color: var(--gold); }
+
+    /* TESTIMONIALS */
+    .testimonials { background: var(--bg-cream); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+    .testimonial-card { border-radius: 22px; background: rgba(232, 217, 206, 0.42); padding: 1.4rem 1.3rem 1.5rem; box-shadow: 0 18px 45px rgba(0, 0, 0, 0.04); border: 1px solid rgba(200, 168, 92, 0.35); }
+    .testimonial-quote { font-family: var(--font-subheading); font-style: italic; font-size: 0.98rem; margin-bottom: 0.8rem; }
+    .testimonial-name { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(26, 26, 26, 0.75); }
+
+    /* FINAL CTA & FOOTER */
+    .final-cta { background: #1a1a1a; color: var(--white); text-align: center; padding: 3.8rem 0; }
+    .final-cta .section-eyebrow { color: rgba(255, 255, 255, 0.55); }
+    .final-cta-heading { font-family: var(--font-heading); font-size: 2rem; margin-bottom: 0.9rem; }
+    .final-cta-subtitle { font-family: var(--font-subheading); font-size: 1.1rem; font-style: italic; margin-bottom: 1.8rem; color: rgba(255, 255, 255, 0.78); }
+    .final-cta-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    .btn-dark-outline { background: transparent; color: var(--white); border-color: rgba(255, 255, 255, 0.35); }
+    .btn-dark-outline:hover { border-color: var(--gold); color: var(--gold); background: rgba(255, 255, 255, 0.04); }
+    
+    footer { background: var(--bg-beige); border-top: 1px solid rgba(200, 168, 92, 0.25); }
+    .footer-inner { padding: 1.5rem 0 1.8rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; font-size: 0.85rem; color: rgba(26, 26, 26, 0.75); }
+    .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-grid, .two-column, .cards-3, .struggles-grid, .testimonials-grid, .outcomes-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 3.2rem; }
+      .hero-grid { gap: 2.4rem; }
+      header { position: static; }
+      .nav { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+    }
+    @media (max-width: 600px) {
+      .hero-title { font-size: 1.9rem; }
+      .section-heading { font-size: 1.6rem; }
+      section { padding: 3rem 0; }
+      .insight-card, .feature-card, .struggle-card, .testimonial-card { padding: 1.2rem 1.1rem; }
+    }
+  </style>
 </head>
 <body>
   <div class="page">
@@ -29,7 +175,7 @@
           <div>
             <div class="hero-eyebrow">Wealth Mindset & Career Expansion</div>
             <h1 class="hero-title">
-              You're not stuck because you lack talent. <span class="highlight">You're stuck because your internal thermostat is set to 'survival'.</span>
+              You’re not stuck because you lack talent. <span class="highlight">You’re stuck because your internal thermostat is set to 'survival'.</span>
             </h1>
             <p class="hero-subtitle">
               Rewire your mind for 10X growth, manifest your dream role, and shatter the glass ceiling.
@@ -38,7 +184,7 @@
               Whether you are facing a career crisis, unemployment, or an income plateau—hard work alone isn't the answer. We help you shift your identity, dissolve money blocks, and position yourself to receive the wealth you actually deserve.
             </p>
             <div class="hero-actions">
-              <a href="#calendar" class="btn btn-primary">Unlock Financial Flow</a>
+              <a href="#cta" class="btn btn-primary">Unlock Financial Flow</a>
               <a href="#contact" class="btn btn-outline">Book a Strategy Call</a>
             </div>
             <p class="hero-badge">
@@ -65,8 +211,8 @@
 
       <section class="struggles" id="struggles">
         <div class="container">
-          <div class="section-eyebrow">If this sounds like you, you're in the right place… </div>
-          <h2 class="section-heading">It's not that you're "not capable". Your money and career story is running on old settings.</h2>
+          <div class="section-eyebrow">If this sounds like you, you’re in the right place… </div>
+          <h2 class="section-heading">It’s not that you’re “not capable”. Your money and career story is running on old settings.</h2>
           <p class="section-subtitle">
             You have the skills and the drive, yet the results don't match your effort. This gap isn't a failure of capability—it's a misalignment of energy and strategy.
           </p>
@@ -149,8 +295,8 @@
               </p>
               <ul class="feature-list">
                 <li>Mapping your early money imprints (family, culture, failures).</li>
-                <li>Spotting hidden loyalty to struggle, sacrifice or "smallness".</li>
-                <li>Creating a new inner script about what's possible for you.</li>
+                <li>Spotting hidden loyalty to struggle, sacrifice or “smallness”.</li>
+                <li>Creating a new inner script about what’s possible for you.</li>
               </ul>
             </article>
 
@@ -173,14 +319,14 @@
               </p>
               <ul class="feature-list">
                 <li>Tools to handle rejection, uncertainty and delays without collapsing.</li>
-                <li>Expanding your "capacity to receive" without self-sabotage.</li>
+                <li>Expanding your “capacity to receive” without self-sabotage.</li>
                 <li>Attracting opportunities vs chasing them.</li>
               </ul>
             </article>
           </div>
 
           <div class="solution-cta">
-            <a href="#calendar" class="btn btn-primary">Claim Your Worth</a>
+            <a href="#cta" class="btn btn-primary">Claim Your Worth</a>
           </div>
         </div>
       </section>
@@ -276,7 +422,7 @@
             </div>
             <div class="outcome-item">
               <div class="outcome-icon">✓</div>
-              <p>A new inner identity: "I am someone who can grow, earn and rise."</p>
+              <p>A new inner identity: “I am someone who can grow, earn and rise.”</p>
             </div>
           </div>
         </div>
@@ -293,19 +439,19 @@
           <div class="testimonials-grid">
             <article class="testimonial-card">
               <p class="testimonial-quote">
-                "I was unemployed for 8 months, terrified. We worked on my 'worthiness wound' and 3 weeks later, I had two offers at 50% higher pay than my last job."
+                “I was unemployed for 8 months, terrified. We worked on my 'worthiness wound' and 3 weeks later, I had two offers at 50% higher pay than my last job.”
               </p>
               <p class="testimonial-name">Client Name · Marketing Director</p>
             </article>
             <article class="testimonial-card">
               <p class="testimonial-quote">
-                "I was stuck at a set income for years. We realized I was self-sabotaging because I feared success meant losing my friends. Once we cleared that, I 10X'd my month."
+                “I was stuck at a set income for years. We realized I was self-sabotaging because I feared success meant losing my friends. Once we cleared that, I 10X’d my month.”
               </p>
               <p class="testimonial-name">Client Name · Consultant</p>
             </article>
             <article class="testimonial-card">
               <p class="testimonial-quote">
-                "I hated my career. InnerGymX gave me the courage to pivot. I'm now doing what I love and making more than I did in my corporate misery."
+                “I hated my career. InnerGymX gave me the courage to pivot. I’m now doing what I love and making more than I did in my corporate misery.”
               </p>
               <p class="testimonial-name">Client Name · Creative Lead</p>
             </article>
@@ -313,48 +459,16 @@
         </div>
       </section>
 
-      <!-- CALENDAR / BOOKING -->
-      <section class="calendar" id="calendar">
-        <div class="container calendar-grid">
-          <div>
-            <div class="section-eyebrow">Book your free first session</div>
-            <h2 class="section-heading">Pick a time that feels kind to your nervous system.</h2>
-            <p class="section-subtitle">
-              You can directly see my available slots and book a time that works for you. I'm available between <strong>9:00 AM – 9:00 PM (IST)</strong>.
-            </p>
-
-            <div class="calendar-frame">
-              <div class="calendar-placeholder">
-                <strong>Calendar goes here</strong>
-                <p>
-                  Ask your developer (or yourself later) to embed your preferred calendar tool here —
-                  Calendly, Zoho Bookings, Google Calendar booking, etc.
-                </p>
-                <p style="margin-top: 0.7rem;">
-                  For now, you can simply mention your preferred days and times in your WhatsApp message, and we'll confirm a slot manually.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="calendar-details">
-            <p>
-              If you aren't ready to book yet and just want to ask a question, you're equally welcome.
-            </p>
-            <div class="contact-block">
-              <p><strong>WhatsApp for queries & booking:</strong><br />
-                <a href="https://wa.me/919999448873" target="_blank" rel="noopener">+91 99994 48873</a>
-              </p>
-              <p><strong>Email:</strong><br />
-                <a href="mailto:info@InnerGymX.in">info@InnerGymX.in</a>
-              </p>
-              <p><strong>Timings:</strong><br />
-                9:00 AM – 9:00 PM (IST)
-              </p>
-              <p style="font-size: 0.86rem; color: rgba(26,26,26,0.6); margin-top: 0.5rem;">
-                This is a quiet, gentle first step — there is no pressure to continue if it doesn't feel right for you.
-              </p>
-            </div>
+      <section class="final-cta" id="cta">
+        <div class="container">
+          <div class="section-eyebrow">Your Permission Slip</div>
+          <h2 class="final-cta-heading">The life you want costs the old version of you.</h2>
+          <p class="final-cta-subtitle">
+            You’re not behind. You’re just one inner shift away from a very different money story. Your next level is waiting.
+          </p>
+          <div class="final-cta-actions">
+            <a href="#contact" class="btn btn-primary">Start Your Wealth Journey</a>
+            <a href="#contact" class="btn btn-dark-outline">Book a Clarity Call</a>
           </div>
         </div>
       </section>
@@ -372,7 +486,6 @@
           </p>
         </div>
       </section>
-
     </main>
 
     <footer>
@@ -393,3 +506,4 @@
   </script>
 </body>
 </html>
+```
