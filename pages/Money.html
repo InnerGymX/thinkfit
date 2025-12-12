@@ -139,6 +139,62 @@
     .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
     .footer-links a:hover { color: var(--gold); }
 
+    /* CALENDAR / BOOKING */
+    .calendar {
+      background: var(--bg-beige);
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .calendar-frame {
+      border-radius: 22px;
+      border: 1px solid rgba(200, 168, 92, 0.35);
+      background: var(--white);
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.05);
+      padding: 0.75rem;
+    }
+
+    .calendar-placeholder {
+      border-radius: 16px;
+      border: 1px dashed rgba(200, 168, 92, 0.6);
+      padding: 2.1rem 1.6rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      background: rgba(252, 249, 244, 0.8);
+    }
+
+    .calendar-placeholder strong {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-charcoal);
+    }
+
+    .calendar-details {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+    }
+
+    .calendar-details p {
+      margin-bottom: 0.7rem;
+    }
+
+    .contact-block {
+      margin-top: 1.1rem;
+      padding: 1rem 1rem;
+      border-radius: 16px;
+      border: 1px solid rgba(200, 168, 92, 0.35);
+      background: rgba(255, 255, 255, 0.9);
+      font-size: 0.9rem;
+    }
+
     /* RESPONSIVE */
     @media (max-width: 900px) {
       .hero-grid, .two-column, .cards-3, .struggles-grid, .testimonials-grid, .outcomes-grid { grid-template-columns: 1fr; }
@@ -164,7 +220,7 @@
           <a href="#struggles">The Block</a>
           <a href="#why">The Root Cause</a>
           <a href="#solution">Quantum Leap</a>
-          <a href="#cta">Start Now</a>
+          <a href="#calendar">Start Now</a>
         </nav>
       </div>
     </header>
@@ -184,7 +240,7 @@
               Whether you are facing a career crisis, unemployment, or an income plateau—hard work alone isn't the answer. We help you shift your identity, dissolve money blocks, and position yourself to receive the wealth you actually deserve.
             </p>
             <div class="hero-actions">
-              <a href="#cta" class="btn btn-primary">Unlock Financial Flow</a>
+              <a href="#calendar" class="btn btn-primary">Unlock Financial Flow</a>
               <a href="#contact" class="btn btn-outline">Book a Strategy Call</a>
             </div>
             <p class="hero-badge">
@@ -326,7 +382,7 @@
           </div>
 
           <div class="solution-cta">
-            <a href="#cta" class="btn btn-primary">Claim Your Worth</a>
+            <a href="#calendar" class="btn btn-primary">Claim Your Worth</a>
           </div>
         </div>
       </section>
@@ -466,9 +522,55 @@
           <p class="final-cta-subtitle">
             You’re not behind. You’re just one inner shift away from a very different money story. Your next level is waiting.
           </p>
-          <div class="final-cta-actions">
+          <!-- <div class="final-cta-actions">
             <a href="#contact" class="btn btn-primary">Start Your Wealth Journey</a>
             <a href="#contact" class="btn btn-dark-outline">Book a Clarity Call</a>
+          </div> -->
+        </div>
+      </section>
+
+       <!-- CALENDAR / BOOKING -->
+      <section class="calendar" id="calendar">
+        <div class="container calendar-grid">
+          <div>
+            <div class="section-eyebrow">Book your free first session</div>
+            <h2 class="section-heading">Pick a time that feels kind to your nervous system.</h2>
+            <p class="section-subtitle">
+              You can directly see my available slots and book a time that works for you. I’m available between <strong>9:00 AM – 9:00 PM (IST)</strong>.
+            </p>
+
+            <div class="calendar-frame">
+              <div class="calendar-placeholder">
+                <strong>Calendar goes here</strong>
+                <p>
+                  Ask your developer (or yourself later) to embed your preferred calendar tool here —
+                  Calendly, Zoho Bookings, Google Calendar booking, etc.
+                </p>
+                <p style="margin-top: 0.7rem;">
+                  For now, you can simply mention your preferred days and times in your WhatsApp message, and we’ll confirm a slot manually.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="calendar-details">
+            <p>
+              If you aren’t ready to book yet and just want to ask a question, you’re equally welcome.
+            </p>
+            <div class="contact-block">
+              <p><strong>WhatsApp for queries & booking:</strong><br />
+                <a href="https://wa.me/919999448873" target="_blank" rel="noopener">+91 99994 48873</a>
+              </p>
+              <p><strong>Email:</strong><br />
+                <a href="mailto:info@InnerGymX.in">info@InnerGymX.in</a>
+              </p>
+              <p><strong>Timings:</strong><br />
+                9:00 AM – 9:00 PM (IST)
+              </p>
+              <p style="font-size: 0.86rem; color: var(--text-muted); margin-top: 0.5rem;">
+                This is a quiet, gentle first step — there is no pressure to continue if it doesn’t feel right for you.
+              </p>
+            </div>
           </div>
         </div>
       </section>
