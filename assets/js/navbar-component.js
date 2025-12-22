@@ -45,7 +45,7 @@
           <div class="brand-tagline">Train your MIND like you train your BODY.</div>
         </div>
         <nav class="nav-links" aria-label="Main Navigation">
-          <a href="${prefix}index.html#top">Home</a>
+          <a href="${prefix}index.html">Home</a>
           <div class="nav-item dropdown">
             <a class="dropdown-toggle" id="lifeAreasToggleComponent" href="#" role="button" aria-haspopup="true" aria-expanded="false">Life Areas</a>
             <div class="dropdown-menu" role="menu">
