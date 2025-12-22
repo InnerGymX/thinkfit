@@ -8,7 +8,7 @@
   const css = `
     /* Minimal navbar styles for pages that don't include the main site CSS */
     .container{max-width:1120px;margin:0 auto;padding:0 1.5rem}
-    header.site-navbar{position:sticky;top:0;z-index:50;background:rgba(247,244,238,0.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(200,168,92,0.16)}
+    header.site-navbar{padding-left:1rem; padding-right:1rem; position:sticky;top:0;z-index:50;background:rgba(247,244,238,0.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(200,168,92,0.16)}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:.85rem 0;gap:1rem}
     .nav-left{display:flex;flex-direction:column;gap:.1rem}
     .brand-name{font-family:Playfair Display,serif;font-size:1.1rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
@@ -22,7 +22,7 @@
     .nav-item.dropdown.open .dropdown-menu{display:block}
     .dropdown-menu a{display:block;padding:.55rem .75rem;color:#1a1a1a;border-radius:6px}
     .dropdown-menu a:hover{background:rgba(200,168,92,.06);color:#c8a85c}
-    @media(max-width:960px){.nav{flex-direction:column;align-items:flex-start}}
+    @media(max-width:960px){.nav{flex-direction:column;align-items:flex-start}.nav-links{justify-content:center}header.site-navbar{position:relative}}
   `;
 
   function injectNav() {
