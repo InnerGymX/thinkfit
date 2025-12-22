@@ -42,6 +42,13 @@
     .nav-links a { opacity: 0.75; transition: opacity 0.2s ease, color 0.2s ease; }
     .nav-links a:hover { opacity: 1; color: var(--gold); }
 
+    /* LEFT SIDEBAR (page-level) */
+    .page-layout { display: grid; grid-template-columns: 240px 1fr; gap: 2rem; align-items: start; }
+    .side-nav { position: sticky; top: 84px; padding-top: 0.75rem; }
+    .side-links { display:flex; flex-direction:column; gap:0.4rem; background:transparent; border-radius:8px; padding:0.25rem 0.5rem; }
+    .side-links a { display:block; padding:0.55rem 0.6rem; color: rgba(26,26,26,0.8); border-radius:6px; transition: background .15s, color .15s, transform .15s; }
+    .side-links a:hover { background: rgba(200,168,92,0.06); color: var(--gold); transform: translateX(4px); }
+
     /* HERO */
     .hero { padding: 4.5rem 0 3.5rem; background: radial-gradient(circle at top left, #e8d9ce 0, transparent 55%), var(--bg-cream); }
     .hero-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 3rem; align-items: center; }
@@ -216,16 +223,20 @@
     <header>
       <div class="container nav">
         <a href="../index.html" class="nav-left">InnerGymX</a>
-        <nav class="nav-links">
-          <a href="#struggles">Health Struggles</a>
-          <a href="#why">Mind-Body Link</a>
-          <a href="#solution">Our Process</a>
-          <a href="#calendar">Book a Free Session</a>
-        </nav>
       </div>
     </header>
 
     <main>
+      <div class="container page-layout">
+        <aside class="side-nav" aria-label="Page navigation">
+          <nav class="side-links">
+            <a href="#struggles">Health Struggles</a>
+            <a href="#why">Mind-Body Link</a>
+            <a href="#solution">Our Process</a>
+            <a href="#calendar">Book a Free Session</a>
+          </nav>
+        </aside>
+        <div class="content-area">
       <section class="hero" id="top">
         <div class="container hero-grid">
           <div>
@@ -667,7 +678,7 @@
           <div class="section-eyebrow">Connect</div>
           <h2 class="section-heading">Book a Clarity Call</h2>
           <p class="section-subtitle">
-            Let's discuss where your energy is blocked and how we can restore your flow.Replace this block with your form embed (Typeform, Google Form, Calendly, etc.), or keep it simple with email/WhatsApp for now.
+            Let's discuss where your energy is blocked and how we can restore your flow.
           </p>
           <p style="font-size: 0.98rem;">
             Email: <a href="mailto:10xInnerGym@gmail.com">10xInnerGym@gmail.com</a><br />
@@ -675,6 +686,8 @@
           </p>
         </div>
       </section>
+        </div>
+      </div>
     </main>
 
     <footer>
@@ -694,5 +707,6 @@
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
+<script src="../assets/js/navbar-component.js"></script>
 <script src="../assets/js/whatsapp-component.js"></script>
 </html>
