@@ -9,7 +9,7 @@
     .whatsapp-float{position:fixed;right:1rem;bottom:1rem;z-index:1100}
     .whatsapp-btn{width:56px;height:56px;border-radius:50%;background:#25D366;display:inline-flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 8px 22px rgba(0,0,0,0.18);transition:transform .15s ease,box-shadow .15s ease;text-decoration:none}
     .whatsapp-btn:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.22)}
-    @media(max-width:480px){.whatsapp-float{left:.6rem;bottom:.6rem}.whatsapp-btn{width:48px;height:48px}}
+    @media(max-width:480px){.whatsapp-float{right:.6rem;bottom:.6rem}.whatsapp-btn{width:48px;height:48px}}
   `;
 
   function inject() {
