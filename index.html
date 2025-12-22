@@ -124,6 +124,56 @@
       opacity: 1;
     }
 
+    /* Dropdown for Life Areas */
+    .nav-item.dropdown {
+      position: relative;
+    }
+
+    .dropdown-toggle {
+      display: inline-block;
+      cursor: pointer;
+      padding: 0.125rem 0;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      min-width: 220px;
+      background: var(--white);
+      border: 1px solid rgba(200,168,92,0.18);
+      border-radius: 10px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+      padding: 0.4rem 0.4rem;
+      display: none;
+      z-index: 200;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 0.55rem 0.75rem;
+      color: var(--text-charcoal);
+      font-size: 0.9rem;
+      text-transform: none;
+      border-radius: 6px;
+    }
+
+    .dropdown-menu a:hover {
+      background: rgba(200,168,92,0.06);
+      color: var(--gold);
+    }
+
+    /* Show dropdown on hover or focus-within for accessibility */
+    .nav-item.dropdown:hover .dropdown-menu,
+    .nav-item.dropdown:focus-within .dropdown-menu {
+      display: block;
+    }
+
+    /* Also support explicit open state (used by JS) so clicks don't immediately close the menu */
+    .nav-item.dropdown.open .dropdown-menu {
+      display: block;
+    }
+
     .nav-cta {
       padding: 0.55rem 1.1rem;
       border-radius: 999px;
@@ -502,6 +552,25 @@
       border: 1px solid rgba(200, 168, 92, 0.2);
       box-shadow: 0 16px 38px rgba(0, 0, 0, 0.03);
       font-size: 0.93rem;
+    }
+
+    /* pop-up hover effect for pillar cards */
+    .pillar-card {
+      transition: transform 220ms ease, box-shadow 220ms ease, z-index 220ms;
+      will-change: transform;
+      position: relative;
+    }
+
+    .pillar-card:hover,
+    .pillar-card:focus {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 28px 64px rgba(0,0,0,0.18);
+      z-index: 120;
+      outline: none;
+    }
+
+    .pillar-card:focus {
+      box-shadow: 0 28px 70px rgba(200,168,92,0.12);
     }
 
     .pillar-tag {
@@ -994,7 +1063,16 @@
         <nav class="nav-links">
           <a href="#top">Home</a>
           <!-- <a href="#companion">Why Companion</a> -->
-          <a href="#pillars">Life Areas</a>
+          <div class="nav-item dropdown">
+            <a class="dropdown-toggle" id="lifeAreasToggle" href="#" role="button" aria-haspopup="true" aria-expanded="false">Life Areas</a>
+            <div class="dropdown-menu" role="menu">
+              <a href="pages/Health_final.html">Health</a>
+              <a href="pages/Money.html">Money & Work</a>
+              <a href="pages/Relationships.html">Relationships</a>
+              <a href="pages/purpose_and_identity_final.html">Purpose & Identity</a>
+              <a href="pages/Goals_manifestation.html">Goal Manifestation</a>
+            </div>
+          </div>
           <!-- <a href="#modalities">Modalities</a> -->
           <!-- <a href="#how">How It Works</a> -->
           <!-- <a href="#calendar">Book Session</a> -->
@@ -1178,7 +1256,7 @@
           </p>
 
           <div class="pillars-grid">
-            <article class="pillar-card" id="health" onclick="window.location.href='pages/Health_final.html'" style="cursor: pointer;">
+            <a class="pillar-card" id="health" href="pages/Health_final.html">
               <div class="pillar-tag">Pillar 01 · Health</div>
               <div class="pillar-title">Mind–Body Health & Inner Calm</div>
               <p style="font-size: 0.92rem;">
@@ -1189,9 +1267,9 @@
                 <li>Chronic stress, inconsistent routines, patterns of self-neglect.</li>
                 <li>Creating sustainable rituals and a calmer nervous system.</li>
               </ul>
-            </article>
+            </a>
 
-            <article class="pillar-card" id="money" onclick="window.location.href='pages/Money.html'" style="cursor: pointer;">
+            <a class="pillar-card" id="money" href="pages/Money.html">
               <div class="pillar-tag">Pillar 02 · Money & Work</div>
               <div class="pillar-title">10X Your Income, Clarity & Opportunities</div>
               <p style="font-size: 0.92rem;">
@@ -1202,9 +1280,9 @@
                 <li>Fear of asking for more, applying bigger or being seen.</li>
                 <li>Manifesting aligned opportunities through inner work and strategy.</li>
               </ul>
-            </article>
+            </a>
 
-            <article class="pillar-card" id="relationships" onclick="window.location.href='pages/Relationships.html'" style="cursor: pointer;">
+            <a class="pillar-card" id="relationships" href="pages/Relationships.html">
               <div class="pillar-tag">Pillar 03 · Relationships</div>
               <div class="pillar-title">Love, Boundaries & Emotional Safety</div>
               <p style="font-size: 0.92rem;">
@@ -1215,9 +1293,9 @@
                 <li>Struggles with saying “no”, or fear of closeness and vulnerability.</li>
                 <li>Creating relationships where you feel safe, seen and cherished.</li>
               </ul>
-            </article>
+            </a>
 
-            <article class="pillar-card" id="purpose" onclick="window.location.href='pages/purpose_and_identity_final.html'" style="cursor: pointer;">
+            <a class="pillar-card" id="purpose" href="pages/purpose_and_identity_final.html">
               <div class="pillar-tag">Pillar 04 · Purpose & Identity</div>
               <div class="pillar-title">Who You Are Becoming</div>
               <p style="font-size: 0.92rem;">
@@ -1228,21 +1306,16 @@
                 <li>Knowing you’re meant for more but not sure what or how.</li>
                 <li>Aligning your days with your deeper values and soul purpose.</li>
               </ul>
-            </article>
+            </a>
 
-            <article class="pillar-card" id="purpose" onclick="window.location.href='pages/Goals_manifestation.html'" style="cursor: pointer;">
+            <a class="pillar-card" id="goals-thread" href="pages/Goals_manifestation.html">
               <div class="pillar-tag">Common Thread that links all 4 Pillars· Goal Manifestation using Law of Attraction</div>
               <div class="pillar-title">Turn your Thoughts into Reality</div>
-              <!-- <p style="font-size: 0.92rem;">
-                Manifestation isn’t magic — it’s alignment. We help you set goals that feel true to your soul, dissolve the inner blocks that sabotage your progress, and activate the energy that pulls your desires toward you.
-              </p> -->
               <ul class="pillar-mini-list">
-                <!-- <li>You know exactly what you want — but something silently blocks you from moving.</li>
-                <li>You even know the steps you should take… yet you can’t take consistent action.</li> -->
                 <li>Hidden programming still shapes your choices without you realizing it.</li>
                 <li>Here, you get the breakthrough to rewrite that programming at the root level.</li>
               </ul>
-            </article>
+            </a>
           </div>
 
           <p style="margin-top: 1.8rem; font-size: 0.9rem; color: var(--text-muted);">
@@ -1561,15 +1634,64 @@
         }, 3000);
       }
     })();
+
+    // Dropdown toggle behavior: keep Life Areas open on click and close on outside click / Escape
+    (function() {
+      const navItem = document.querySelector('.nav-item.dropdown');
+      if (!navItem) return;
+      const toggle = navItem.querySelector('.dropdown-toggle');
+      const menu = navItem.querySelector('.dropdown-menu');
+
+      function open() {
+        navItem.classList.add('open');
+        toggle.setAttribute('aria-expanded', 'true');
+      }
+      function close() {
+        navItem.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+
+      // toggle on click (useful for touch and keyboard users)
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (navItem.classList.contains('open')) {
+          close();
+        } else {
+          open();
+        }
+      });
+
+      // open persistently when hovering the nav item (will remain open until outside click or Escape)
+      let persistedFromHover = false;
+      navItem.addEventListener('mouseenter', function() {
+        persistedFromHover = true;
+        open();
+      });
+
+      // clicking outside closes the menu
+      document.addEventListener('click', function(e) {
+        if (!navItem.contains(e.target)) close();
+      });
+
+      // close on Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') close();
+      });
+
+      // keyboard focus: open on focusin; when focus leaves, only close if it wasn't persisted by hover
+      navItem.addEventListener('focusin', function() {
+        open();
+      });
+      navItem.addEventListener('focusout', function() {
+        setTimeout(() => {
+          if (!navItem.contains(document.activeElement) && !persistedFromHover) close();
+        }, 0);
+      });
+    })();
   </script>
 
-    <div class="whatsapp-float">
-      <a class="whatsapp-btn" href="https://wa.me/919999448873?text=Hi!%20I%20would%20like%20to%20get%20more%20informtion%20regarding%20InnerGymX" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-          <path fill="currentColor" d="M20.52 3.48A11.81 11.81 0 0 0 12 .75 11.93 11.93 0 0 0 .75 12c0 2.1.55 4.14 1.6 5.94L.12 23.25l4.59-1.2A11.88 11.88 0 0 0 12 23.25C20.1 23.25 24 13.5 24 12a11.81 11.81 0 0 0-3.48-8.52zM12 21.5a9.45 9.45 0 0 1-5.12-1.46l-.37-.23-3 0.79.8-2.92-.24-.38A9.32 9.32 0 0 1 2.5 12 9.5 9.5 0 1 1 12 21.5zM17.3 14.02c-.27-.14-1.6-.8-1.85-.89-.25-.09-.43-.14-.62.14-.19.27-.74.89-.9 1.07-.16.19-.31.21-.58.08-.27-.14-1.14-.42-2.17-1.34-.8-.72-1.34-1.61-1.5-1.88-.16-.27-.02-.41.12-.55.12-.12.27-.31.41-.47.14-.16.19-.27.28-.45.09-.18.04-.34-.02-.48-.06-.12-.62-1.5-.85-2.06-.22-.54-.45-.47-.62-.48-.16-.01-.35-.01-.54-.01-.19 0-.5.07-.76.34-.26.27-1 1-1 2.44 0 1.43 1.03 2.82 1.17 3.02.14.2 2.03 3.1 4.92 4.35 1.46.62 2.6.99 3.5 1.27.46.14.88.12 1.21.07.37-.06 1.6-.65 1.83-1.27.23-.62.23-1.15.16-1.27-.07-.12-.27-.19-.56-.32z"/>
-        </svg>
-      </a>
-    </div>
+    <script src="assets/js/whatsapp-component.js"></script>
     
 </body>
 </html>
