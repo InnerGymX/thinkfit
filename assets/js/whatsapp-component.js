@@ -1,7 +1,9 @@
 // whatsapp-component.js
 (function() {
-  const phone = '919999448873';
-  const text = encodeURIComponent('Hi! I would like to get more information regarding InnerGymX');
+  const phone = '919217798422';
+  const text = encodeURIComponent(
+    "Hi, welcome to InnerGymX 🌼\n\nI’m Maanviya.I’m here to listen.\n\nYou can share what you’re struggling with — or simply tell me what made you reach out today."
+  );
   const href = `https://wa.me/${phone}?text=${text}`;
 
   // CSS for the floating button (keeps styles self-contained)
