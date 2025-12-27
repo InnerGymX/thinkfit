@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InnerGymX – Purpose, Identity & True Self</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* INNERGYMX DESIGN SYSTEM 
+       Consistent Premium Aesthetic (Cream, Gold, Charcoal)
+    */
+    :root {
+      --bg-cream: #f7f4ee;
+      --bg-beige: #fcf9f4;
+      --bg-blush: #e8d9ce; 
+      --text-charcoal: #1a1a1a;
+      --gold: #c8a85c;
+      --white: #ffffff;
+
+      --font-heading: "Playfair Display", serif;
+      --font-subheading: "Cormorant Garamond", serif;
+      --font-body: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+      --max-width: 1100px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); color: var(--text-charcoal); background: var(--bg-cream); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .page { min-height: 100vh; }
+    .container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
+
+    /* NAV */
+    header { position: sticky; top: 0; z-index: 20; background: rgba(247, 244, 238, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(200, 168, 92, 0.15); }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 0; font-size: 0.95rem; }
+    .nav-left { font-family: var(--font-heading); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; font-size: 0.95rem; }
+    .nav-links { display: flex; gap: 1.5rem; font-size: 0.9rem; }
+    .nav-links a { opacity: 0.75; transition: opacity 0.2s ease, color 0.2s ease; }
+    .nav-links a:hover { opacity: 1; color: var(--gold); }
+
+    /* LEFT SIDEBAR (page-level) */
+    .page-layout { display: grid; grid-template-columns: 240px 1fr; gap: 2rem; align-items: start; }
+    .side-nav { position: sticky; top: 84px; padding-top: 0.75rem; }
+    .side-links { display:flex; flex-direction:column; gap:0.4rem; background:transparent; border-radius:8px; padding:0.25rem 0.5rem; }
+    .side-links a { display:block; padding:0.55rem 0.6rem; color: rgba(26,26,26,0.8); border-radius:6px; transition: background .15s, color .15s, transform .15s; }
+    .side-links a:hover { background: rgba(200,168,92,0.06); color: var(--gold); transform: translateX(4px); }
+
+    /* HERO */
+    .hero { padding: 4.5rem 0 3.5rem; background: radial-gradient(circle at top left, #e8d9ce 0, transparent 55%), var(--bg-cream); }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 3rem; align-items: center; }
+    .hero-eyebrow { font-size: 0.9rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(26, 26, 26, 0.65); margin-bottom: 0.75rem; }
+    .hero-title { font-family: var(--font-heading); font-size: clamp(2.2rem, 3.3vw, 3.1rem); line-height: 1.2; margin-bottom: 1rem; }
+    .hero-title span.highlight { color: var(--gold); font-style: italic; }
+    .hero-subtitle { font-family: var(--font-subheading); font-size: 1.35rem; font-style: italic; margin-bottom: 1.25rem; }
+    .hero-body { font-size: 0.98rem; max-width: 32rem; margin-bottom: 1.9rem; color: rgba(26, 26, 26, 0.85); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.9rem; }
+    
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.8rem 1.6rem; border-radius: 999px; border: 1px solid transparent; font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; cursor: pointer; transition: all 0.2s ease; text-decoration: none; }
+    .btn-primary { background: var(--gold); border-color: var(--gold); color: var(--white); box-shadow: 0 10px 25px rgba(200, 168, 92, 0.25); }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 14px 35px rgba(200, 168, 92, 0.35); }
+    .btn-outline { background: transparent; border-color: rgba(26, 26, 26, 0.3); color: var(--text-charcoal); }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-1px); }
+    .hero-badge { margin-top: 1rem; font-size: 0.85rem; color: rgba(26, 26, 26, 0.7); }
+
+    .hero-visual { position: relative; min-height: 260px; }
+    .hero-circle {inset: 0; background: radial-gradient(circle at 30% 10%, #ffffff 0, #f7f4ee 42%, #e8d9ce 100%); border-radius: 32px; border: 1px solid rgba(200, 168, 92, 0.2); box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12); display: flex; align-items: center; justify-content: center; padding: 2rem; }
+    .hero-image { width: 100%; max-width: 380px; height: auto; border-radius: 24px; box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12); border: 1px solid rgba(200, 168, 92, 0.2); object-fit: cover; }
+    .hero-visual-inner { text-align: center; }
+    .hero-visual-eyebrow { font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(26, 26, 26, 0.6); margin-bottom: 0.75rem; }
+    .hero-visual-main { font-family: var(--font-heading); font-size: 1.35rem; margin-bottom: 0.75rem; }
+    .hero-visual-caption { font-size: 0.88rem; color: rgba(26, 26, 26, 0.7); max-width: 16rem; margin: 0 auto; }
+
+    /* SECTIONS */
+    section { padding: 4.2rem 0; }
+    .section-heading { font-family: var(--font-heading); font-size: 1.9rem; margin-bottom: 1rem; }
+    .section-subtitle { font-size: 1rem; color: rgba(26, 26, 26, 0.7); max-width: 34rem; margin-bottom: 2.2rem; }
+    .section-eyebrow { font-size: 0.86rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(26, 26, 26, 0.5); margin-bottom: 0.5rem; }
+
+    /* STRUGGLES */
+    .struggles { background: var(--bg-beige); }
+    .struggles-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+    .struggle-card { background: var(--white); border-radius: 22px; padding: 1.4rem 1.3rem; box-shadow: 0 18px 40px rgba(0, 0, 0, 0.03); border: 1px solid rgba(200, 168, 92, 0.16); display: flex; flex-direction: column; gap: 0.45rem; }
+    .struggle-tag { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(26, 26, 26, 0.55); }
+    .struggle-text { font-size: 0.95rem; }
+
+    /* WHY */
+    .why { background: radial-gradient(circle at top right, #e8d9ce 0, transparent 55%), var(--bg-cream); }
+    .two-column { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 2.5rem; align-items: center; }
+    .insight-card { background: var(--white); border-radius: 24px; border: 1px solid rgba(200, 168, 92, 0.2); padding: 1.7rem 1.8rem; box-shadow: 0 20px 45px rgba(0, 0, 0, 0.04); position: relative; overflow: hidden; }
+    .insight-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(130deg, rgba(200, 168, 92, 0.08), transparent); pointer-events: none; }
+    .insight-heading { font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 0.75rem; }
+    .insight-body { font-size: 0.96rem; color: rgba(26, 26, 26, 0.82); }
+    .insight-list { margin-top: 0.85rem; font-size: 0.95rem; padding-left: 1.1rem; }
+    .insight-list li { margin-bottom: 0.3rem; }
+    .why-visual { border-radius: 26px; min-height: 240px; background: radial-gradient(circle at 15% 0, #ffffff 0, #f7f4ee 45%, #e8d9ce 100%); border: 1px solid rgba(200, 168, 92, 0.28); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08); display: flex; align-items: center; justify-content: center; padding: 2.3rem; text-align: center; }
+    .why-visual-text { font-family: var(--font-subheading); font-size: 1.2rem; font-style: italic; max-width: 18rem; margin: 0 auto; color: rgba(26, 26, 26, 0.9); }
+
+    /* SOLUTION */
+    .solution { background: var(--bg-cream); }
+    .cards-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.6rem; }
+    .feature-card { background: var(--white); border-radius: 24px; border: 1px solid rgba(200, 168, 92, 0.22); box-shadow: 0 20px 45px rgba(0, 0, 0, 0.04); padding: 1.6rem 1.4rem 1.7rem; position: relative; }
+    .feature-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 6px; border-radius: 24px 24px 0 0; background: linear-gradient(90deg, var(--gold), #e8d9ce); }
+    .feature-title { font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 0.6rem; }
+    .feature-body { font-size: 0.94rem; color: rgba(26, 26, 26, 0.82); }
+    .feature-list { list-style: none; margin-top: 0.55rem; font-size: 0.9rem; }
+    .feature-list li::before { content: "•"; color: var(--gold); display: inline-block; width: 1em; margin-left: -1em; }
+    .solution-cta { margin-top: 2rem; display: flex; justify-content: flex-start; }
+
+    /* JOURNEY */
+    .journey { background: linear-gradient(180deg, rgba(220, 214, 234, 0.25), transparent); }
+    .timeline { position: relative; padding-left: 1.6rem; margin-top: 1.6rem; }
+    .timeline::before { content: ""; position: absolute; left: 0.4rem; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--gold), rgba(200, 168, 92, 0.2)); }
+    .timeline-item { position: relative; padding-left: 1.4rem; margin-bottom: 1.4rem; }
+    .timeline-dot { position: absolute; left: 0; top: 0.3rem; width: 0.7rem; height: 0.7rem; border-radius: 999px; background: var(--gold); box-shadow: 0 0 0 5px rgba(200, 168, 92, 0.18); }
+    .timeline-title { font-family: var(--font-heading); font-size: 1.02rem; margin-bottom: 0.2rem; }
+    .timeline-body { font-size: 0.92rem; color: rgba(26, 26, 26, 0.8); }
+
+    /* OUTCOMES */
+    .outcomes { background: var(--bg-beige); }
+    .outcomes-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.7rem 2.5rem; margin-top: 1.3rem; }
+    .outcome-item { font-size: 0.96rem; display: flex; align-items: flex-start; gap: 0.5rem; }
+    .outcome-icon { margin-top: 0.15rem; font-size: 0.9rem; color: var(--gold); }
+
+    /* TESTIMONIALS */
+    .testimonials { background: var(--bg-cream); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+    .testimonial-card { border-radius: 22px; background: rgba(232, 217, 206, 0.42); padding: 1.4rem 1.3rem 1.5rem; box-shadow: 0 18px 45px rgba(0, 0, 0, 0.04); border: 1px solid rgba(200, 168, 92, 0.35); }
+    .testimonial-quote { font-family: var(--font-subheading); font-style: italic; font-size: 0.98rem; margin-bottom: 0.8rem; }
+    .testimonial-name { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(26, 26, 26, 0.75); }
+
+    /* FINAL CTA & FOOTER */
+    .final-cta { background: #1a1a1a; color: var(--white); text-align: center; padding: 3.8rem 0; }
+    .final-cta .section-eyebrow { color: rgba(255, 255, 255, 0.55); }
+    .final-cta-heading { font-family: var(--font-heading); font-size: 2rem; margin-bottom: 0.9rem; }
+    .final-cta-subtitle { font-family: var(--font-subheading); font-size: 1.1rem; font-style: italic; margin-bottom: 1.8rem; color: rgba(255, 255, 255, 0.78); }
+    .final-cta-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    .btn-dark-outline { background: transparent; color: var(--white); border-color: rgba(255, 255, 255, 0.35); }
+    .btn-dark-outline:hover { border-color: var(--gold); color: var(--gold); background: rgba(255, 255, 255, 0.04); }
+    
+    footer { background: var(--bg-beige); border-top: 1px solid rgba(200, 168, 92, 0.25); }
+    .footer-inner { padding: 1.5rem 0 1.8rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; font-size: 0.85rem; color: rgba(26, 26, 26, 0.75); }
+    .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* CALENDAR / BOOKING */
+    .calendar {
+      background: var(--bg-beige);
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .calendar-frame {
+      border-radius: 22px;
+      border: 1px solid rgba(200, 168, 92, 0.35);
+      background: var(--white);
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.05);
+      padding: 0.75rem;
+    }
+
+    .calendar-placeholder {
+      border-radius: 16px;
+      border: 1px dashed rgba(200, 168, 92, 0.6);
+      padding: 2.1rem 1.6rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      background: rgba(252, 249, 244, 0.8);
+    }
+
+    .calendar-placeholder strong {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-charcoal);
+    }
+
+    .calendar-details {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+    }
+
+    .calendar-details p {
+      margin-bottom: 0.7rem;
+    }
+
+    .contact-block {
+      margin-top: 1.1rem;
+      padding: 1rem 1rem;
+      border-radius: 16px;
+      border: 1px solid rgba(200, 168, 92, 0.35);
+      background: rgba(255, 255, 255, 0.9);
+      font-size: 0.9rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-grid, .two-column, .cards-3, .struggles-grid, .testimonials-grid, .outcomes-grid { grid-template-columns: 1fr; }
+      .page-layout { grid-template-columns: 1fr; }
+      .side-nav { display: none; }
+      .hero { padding-top: 3.2rem; }
+      .hero-grid { gap: 2.4rem; }
+      header { position: static; }
+      .nav { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+    }
+    @media (max-width: 600px) {
+      .hero-title { font-size: 1.9rem; }
+      .section-heading { font-size: 1.6rem; }
+      section { padding: 3rem 0; }
+      .insight-card, .feature-card, .struggle-card, .testimonial-card { padding: 1.2rem 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="container nav">
+        <a href="../index.html" class="nav-left">InnerGymX</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="container page-layout">
+        <aside class="side-nav" aria-label="Page navigation">
+          <nav class="side-links">
+            <a href="#struggles">The Void</a>
+            <a href="#why">The Mask</a>
+            <a href="#solution">True Self</a>
+            <a href="#calendar">Awaken</a>
+          </nav>
+        </aside>
+        <div class="content-area">
+      <section class="hero" id="top">
+        <div class="container hero-grid">
+          <div>
+            <div class="hero-eyebrow">Identity & Life Purpose</div>
+            <h1 class="hero-title">
+              You're not behind in life. <span class="You're in the middle of an identity upgrade your mind hasn’t caught up with yet.</span>
+            </h1>
+            <p class="hero-subtitle">
+              Stop living a life designed by others. Uncover your true identity and find the "Why" that makes you unstoppable.
+            </p>
+            <p class="hero-body">
+              This isn't just a mid-life crisis or a funk. It's an invitation. The pain you feel is the friction between who you are pretending to be and who you actually are. It’s time to drop the mask.At InnerGymX, we walk with you as you re-meet yourself, clarify your purpose and design an identity that fits your next chapter.
+            </p>
+            <div class="hero-actions">
+              <a href="#calendar" class="btn btn-primary">Begin Self-Discovery</a>
+              <a href="#contact" class="btn btn-outline">Book a Purpose Call</a>
+            </div>
+            <p class="hero-badge">
+              Existential Clarity · Shadow Work · Legacy Building
+            </p>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-circle">
+              <div class="hero-visual-inner">
+                <div class="hero-visual-eyebrow">The Core Self</div>
+                <img src="../assets/images/Identity_Transformation.png" alt="Wellbeing" class="hero-image" />
+                <div class="hero-visual-main">
+                  "Who are you when the<br />world isn't watching?"
+                </div>
+                <p class="hero-visual-caption">
+                  When you know the answer to this, you stop chasing validation and start attracting fulfillment.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="struggles" id="struggles">
+        <div class="container">
+          <div class="section-eyebrow">The Silent Struggle</div>
+          <h2 class="section-heading">The heavy cost of living an inauthentic life.</h2>
+          <p class="section-subtitle">
+            You might look successful on paper, but internally you feel like an actor your own movie—reading lines you didn't write.
+          </p>
+
+          <div class="struggles-grid">
+            <div class="struggle-card">
+              <div class="struggle-tag">01</div>
+              <p class="struggle-text">**The Hollow Victory:** You hit your goals (money, job, status) but the happiness lasted five minutes. Now, you feel empty again.</p>
+            </div>
+            <div class="struggle-card">
+              <div class="struggle-tag">02</div>
+              <p class="struggle-text">**The Chameleon Effect:** You change your personality to fit who you're with, leaving you confused about who *you* actually are.</p>
+            </div>
+            <div class="struggle-card">
+              <div class="struggle-tag">03</div>
+              <p class="struggle-text">**Decision Paralysis:** Because you don't know your core values, every big life decision feels overwhelming and terrifying.</p>
+            </div>
+            <div class="struggle-card">
+              <div class="struggle-tag">04</div>
+              <p class="struggle-text">**Existential Fatigue:** You wake up tired not because of physical exertion, but because pretending is exhausting.</p>
+            </div>
+            <div class="struggle-card">
+              <div class="struggle-tag">05</div>
+              <p class="struggle-text">**Comparison Trap:** You envy others not because they have *more*, but because they seem to have *meaning*.</p>
+            </div>
+            <div class="struggle-card">
+              <div class="struggle-tag">06</div>
+              <p class="struggle-text">**Drifting:** You feel like life is happening *to* you, rather than you leading it with intention and fire.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="why" id="why">
+        <div class="container two-column">
+          <div>
+            <div class="section-eyebrow">The Root Layer</div>
+            <h2 class="section-heading">You aren't lost. You are just buried under "shoulds."</h2>
+            <p class="section-subtitle">
+              From childhood, we are taught to trade our authenticity for attachment. We learn that being "ourselves" is risky, so we build a False Self to survive.
+            </p>
+
+            <div class="insight-card">
+              <h3 class="insight-heading">Why you feel disconnected</h3>
+              <p class="insight-body">
+                The identity you are currently wearing was likely constructed to:
+              </p>
+              <ul class="insight-list">
+                <li>**Please Parents:** Fulfilling a legacy or career path that wasn't yours.</li>
+                <li>**Avoid Rejection:** Hiding your true quirks, passions, or opinions to fit in.</li>
+                <li>**Seek Safety:** Choosing the "practical" path over the "purposeful" one.</li>
+              </ul>
+              <p class="insight-body" style="margin-top: 0.75rem;">
+                At InnerGymX, we don't "give" you a purpose. We help you excavate the one that has been buried there all along.
+              </p>
+            </div>
+          </div>
+
+          <div class="why-visual">
+            <p class="why-visual-text">
+              Purpose is not a destination you find.<br>It is a layer of yourself you uncover.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="solution" id="solution">
+        <div class="container">
+          <div class="section-eyebrow">InnerGymX Approach</div>
+          <h2 class="section-heading">Identity Excavation & Reconstruction</h2>
+          <p class="section-subtitle">
+            A deep-dive process to strip away the conditioning, meet your shadow, and integrate your full power.
+          </p>
+
+          <div class="cards-3">
+            <article class="feature-card">
+              <h3 class="feature-title">The De-Conditioning</h3>
+              <p class="feature-body">
+                We identify the voices in your head that aren't yours (society, family, critics) and systematically turn down their volume.
+              </p>
+              <ul class="feature-list">
+                <li>Tracing your identity stories from childhood to now.</li>
+                <li>Breaking limiting belief systems.</li>
+                <li>Recognizing "False Self" triggers.</li>
+                <li>Reclaiming your intuition.</li>
+              </ul>
+            </article>
+
+            <article class="feature-card">
+              <h3 class="feature-title">Values Alignment</h3>
+              <p class="feature-body">
+                Discovering your non-negotiables. When you know what you stand for, you no longer fall for everything.
+              </p>
+              <ul class="feature-list">
+                <li>Core values discovery workshop.</li>
+                <li>Aligning career/relationships to values.</li>
+                <li>Learning to say "No" to the misalignment.</li>
+                <li>Co-creating a living purpose statement you can grow with.</li>
+              </ul>
+            </article>
+
+            <article class="feature-card">
+              <h3 class="feature-title">Purpose Activation</h3>
+              <p class="feature-body">
+                Moving from "Who am I?" to "What am I here to do?" Turning your unique pain and skills into a mission.
+              </p>
+              <ul class="feature-list">
+                <li>Finding your "Zone of Genius".</li>
+                <li>Micro-behaviours that match the identity you’re stepping into.</li>
+                <li>Practices to handle guilt, fear and resistance when you choose differently.</li>
+                <li>Connecting contribution to satisfaction.</li>
+                
+            </article>
+          </div>
+
+          <div class="solution-cta">
+            <a href="#calendar" class="btn btn-primary">Start the Excavation</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="journey">
+        <div class="container">
+          <div class="section-eyebrow">The Inner Roadmap</div>
+          <h2 class="section-heading">The 5-Step Journey to Your True Self</h2>
+          <p class="section-subtitle">
+            This is not about becoming a "new" you. It is about becoming the *real* you.
+          </p>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <h3 class="timeline-title">Step 1 · The Pause</h3>
+              <p class="timeline-body">
+                Stopping the autopilot. We create space to observe your life without judgment and admit what isn't working.
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <h3 class="timeline-title">Step 2 · Shadow Work</h3>
+              <p class="timeline-body">
+                We look at the parts of yourself you've rejected, hidden, or felt ashamed of—because that's often where your power is hiding.
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <h3 class="timeline-title">Step 3 · The Origin Story</h3>
+              <p class="timeline-body">
+                Connecting the dots of your past experiences to find the "golden thread" of purpose that has always been there.
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <h3 class="timeline-title">Step 4 · Prototype & Play</h3>
+              <p class="timeline-body">
+                We stop overthinking and start acting. Testing your new identity in small, low-risk ways to see what feels true.
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <h3 class="timeline-title">Step 5 · Embodiment with Companion Support</h3>
+              <p class="timeline-body">
+                Living your truth fully. Making the career pivot, setting the boundary, or starting the project that scares and excites you.As you shift, you won’t be alone. We review, recalibrate and support you through doubts, dips and expansions with deep companionship.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="outcomes">
+        <div class="container">
+          <div class="section-eyebrow">The Transformation</div>
+          <h2 class="section-heading">Clarity breeds confidence.</h2>
+          <p class="section-subtitle">
+            This isn’t about becoming a “perfect” person. It’s about becoming a truer one — and letting your choices reflect that truth.
+          </p>
+
+          <div class="outcomes-grid">
+            <div class="outcome-item">
+              <div class="outcome-icon">✓</div>
+              <p>Unshakeable confidence because you are no longer hiding.</p>
+            </div>
+            <div class="outcome-item">
+              <div class="outcome-icon">✓</div>
+              <p>A sense of inner peace that external chaos cannot touch.</p>
+            </div>
+            <div class="outcome-item">
+              <div class="outcome-icon">✓</div>
+              <p>Waking up with a clear "Why" that drives your day.</p>
+            </div>
+            <div class="outcome-item">
+              <div class="outcome-icon">✓</div>
+              <p>Relationships deepen because you are showing up authentically.</p>
+            </div>
+            <div class="outcome-item">
+              <div class="outcome-icon">✓</div>
+              <p>Freedom from the "Comparison Trap" (you are on your own lane).</p>
+            </div>
+            <div class="outcome-item">
+              <div class="outcome-icon">✓</div>
+              <p>A career or business that feels like an extension of your soul.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials">
+        <div class="container">
+          <div class="section-eyebrow">Stories of Awakening</div>
+          <h2 class="section-heading">People who found their way home.</h2>
+          <p class="section-subtitle">
+            From lost and burnt out to aligned and on fire. Who tou are becoming matters more than who you've been.
+          </p>
+
+          <div class="testimonials-grid">
+            <article class="testimonial-card">
+              <p class="testimonial-quote">
+                “I had the high-paying job and the nice car, but I felt dead inside. This work helped me realize I was living my father’s dream, not mine. I’ve never felt lighter.”
+              </p>
+              <p class="testimonial-name">Shivani S · Ex-Corporate / Now Artist . Kerala</p>
+            </article>
+            <article class="testimonial-card">
+              <p class="testimonial-quote">
+                “I thought I had to 'find' myself. InnerGymX showed me I just had to stop being who I wasn't. The clarity was instant.”
+              </p>
+              <p class="testimonial-name">Prateek K · Founder . Amravati</p>
+            </article>
+            <article class="testimonial-card">
+              <p class="testimonial-quote">
+                “I didn't know what my purpose was. Through the excavation process, I connected my past pain to my future power. Now I lead with conviction.”
+              </p>
+              <p class="testimonial-name">Sandeep N ·Student . Noida</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta" id="cta">
+        <div class="container">
+          <div class="section-eyebrow">The Invitation</div>
+          <h2 class="final-cta-heading">The world needs the real you, not the polite version.</h2>
+          <p class="final-cta-subtitle">
+            You don’t have to burn your life down overnight. You can begin with one honest conversation — with yourself, and with us.
+          </p>
+          <!-- <div class="final-cta-actions">
+            <a href="#contact" class="btn btn-primary">Find Your Purpose</a>
+            <a href="#contact" class="btn btn-dark-outline">Talk to a Guide</a>
+          </div> -->
+        </div>
+      </section>
+
+       <!-- CALENDAR / BOOKING -->
+      <section class="calendar" id="calendar">
+        <div class="container calendar-grid">
+          <div>
+            <div class="section-eyebrow">Book your free first session</div>
+            <h2 class="section-heading">Pick a time that feels kind to your nervous system.</h2>
+            <p class="section-subtitle">
+              You can directly see my available slots and book a time that works for you. I’m available between <strong>9:00 AM – 9:00 PM (IST)</strong>.
+            </p>
+
+            <div class="calendar-frame">
+              <!-- Google Calendar Appointment Scheduling begin -->
+              <iframe
+                src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3SLCJfSJyFDKnmHwY8KK_ZtMl8Hk2IlRX7qnrmMzew6Nyt4hSl096tSNSWagbjbEF19DndW_QT?gv=true"
+                style="border: 0"
+                width="100%"
+                height="600"
+                frameborder="0">
+              </iframe>
+              <!-- end Google Calendar Appointment Scheduling -->
+            </div>
+          </div>
+
+          <div class="calendar-details">
+            <p>
+              If you aren’t ready to book yet and just want to ask a question, you’re equally welcome.
+            </p>
+            <div class="contact-block">
+              <p><strong>WhatsApp for queries & booking:</strong><br />
+                <a href="https://wa.me/919217798422" target="_blank" rel="noopener">+91 92177 98422</a>
+              </p>
+              <p>
+                <strong>Start the conversation:</strong><br />
+                <a 
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSdz7DFPRRBfUZW8gd0cVEJKOqz9vmKljO0JxmuWPQ7fWbfGVA/viewform"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Share a few details → I’ll personally get back to you
+                </a>
+              </p>
+              <p>
+                <strong>Timings:</strong><br />
+                <strong>Mon – Fri:</strong> 2:00 PM – 11:00 PM (IST)<br />
+                <strong>Sat – Sun:</strong> 11:00 AM – 11:00 PM (IST)
+              </p>
+              <p style="font-size: 0.86rem; color: var(--text-muted); margin-top: 0.5rem;">
+                This is a quiet, gentle first step — there is no pressure to continue if it doesn’t feel right for you.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" style="padding: 3rem 0;">
+        <div class="container">
+          <div class="section-eyebrow">Connect</div>
+          <h2 class="section-heading">Book a Discovery Call</h2>
+          <p class="section-subtitle">
+            Let’s explore what’s next for you.
+          </p>
+          <p style="font-size: 0.98rem;">
+            Email: <a href="mailto:10xInnerGym@gmail.com">10xInnerGym@gmail.com</a><br />
+            Website: <a href="https://InnerGymX.com" target="_blank" rel="noopener">https://InnerGymX.com</a>
+          </p>
+        </div>
+      </section>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <div>© <span id="year"></span> InnerGymX · All rights reserved.</div>
+        <div class="footer-links">
+          <a href="#top">Back to top</a>
+          <a href="#struggles">The Void</a>
+          <a href="#solution">True Self</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+<script src="../assets/js/navbar-component.js"></script>
+<script src="../assets/js/whatsapp-component.js"></script>
+</html>
