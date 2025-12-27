@@ -19,6 +19,11 @@
     .nav-item.dropdown{position:relative}
     .dropdown-toggle{cursor:pointer}
     .dropdown-menu{position:absolute;top:calc(100% + 6px);left:0;min-width:220px;background:#fff;border:1px solid rgba(200,168,92,.18);border-radius:10px;padding:.4rem;display:none;z-index:200}
+    .dropdown-menu .has-sub{position:relative}
+    .dropdown-menu .submenu{position:absolute;top:0;left:100%;min-width:200px;background:#fff;border:1px solid rgba(200,168,92,.18);border-radius:8px;padding:.35rem;display:none;box-shadow:0 12px 28px rgba(0,0,0,0.12)}
+    .dropdown-menu .has-sub.open > .submenu{display:block}
+    .dropdown-menu .submenu a{display:block;padding:.45rem .6rem;border-radius:6px;color:#1a1a1a}
+    .dropdown-menu .submenu a:hover{background:rgba(200,168,92,.06);color:#c8a85c}
     .nav-item.dropdown.open .dropdown-menu{display:block}
     .dropdown-menu a{display:block;padding:.55rem .75rem;color:#1a1a1a;border-radius:6px}
     .dropdown-menu a:hover{background:rgba(200,168,92,.06);color:#c8a85c}
@@ -49,11 +54,55 @@
           <div class="nav-item dropdown">
             <a class="dropdown-toggle" id="lifeAreasToggleComponent" href="#" role="button" aria-haspopup="true" aria-expanded="false">Life Areas</a>
             <div class="dropdown-menu" role="menu">
-              <a href="${prefix}pages/Health_final.html">Health</a>
-              <a href="${prefix}pages/Money.html">Money & Work</a>
-              <a href="${prefix}pages/Relationships.html">Relationships</a>
-              <a href="${prefix}pages/purpose_and_identity_final.html">Purpose & Identity</a>
-              <a href="${prefix}pages/Goals_manifestation.html">Goal Manifestation</a>
+              <div class="has-sub">
+                <a href="${prefix}pages/Health_final.html" class="submenu-toggle">Health</a>
+                <div class="submenu" role="menu">
+                  <a href="${prefix}pages/Health_final.html#struggles">Health Struggles</a>
+                  <a href="${prefix}pages/Health_final.html#why">Mind-Body Link</a>
+                  <a href="${prefix}pages/Health_final.html#solution">Our Process</a>
+                  <a href="${prefix}pages/Health_final.html#calendar">Book a Free Session</a>
+                </div>
+              </div>
+
+              <div class="has-sub">
+                <a href="${prefix}pages/Money.html" class="submenu-toggle">Money & Work</a>
+                <div class="submenu" role="menu">
+                  <a href="${prefix}pages/Money.html#struggles">The Block</a>
+                  <a href="${prefix}pages/Money.html#why">The Root Cause</a>
+                  <a href="${prefix}pages/Money.html#solution">Quantum Leap</a>
+                  <a href="${prefix}pages/Money.html#calendar">Start Now</a>
+                </div>
+              </div>
+
+              <div class="has-sub">
+                <a href="${prefix}pages/Relationships.html" class="submenu-toggle">Relationships</a>
+                <div class="submenu" role="menu">
+                  <a href="${prefix}pages/Relationships.html#struggles">Relationship Struggles</a>
+                  <a href="${prefix}pages/Relationships.html#why">Why Relationships Feel Hard</a>
+                  <a href="${prefix}pages/Relationships.html#solution">Signature Solution</a>
+                  <a href="${prefix}pages/Relationships.html#calendar">Book a Free Session</a>
+                </div>
+              </div>
+
+              <div class="has-sub">
+                <a href="${prefix}pages/purpose_and_identity_final.html" class="submenu-toggle">Purpose & Identity</a>
+                <div class="submenu" role="menu">
+                  <a href="${prefix}pages/purpose_and_identity_final.html#struggles">The Void</a>
+                  <a href="${prefix}pages/purpose_and_identity_final.html#why">The Root Layer</a>
+                  <a href="${prefix}pages/purpose_and_identity_final.html#solution">Identity Excavation</a>
+                  <a href="${prefix}pages/purpose_and_identity_final.html#calendar">Awaken</a>
+                </div>
+              </div>
+
+              <div class="has-sub">
+                <a href="${prefix}pages/Goals_manifestation.html" class="submenu-toggle">Goal Manifestation</a>
+                <div class="submenu" role="menu">
+                  <a href="${prefix}pages/Goals_manifestation.html#struggles">The Block</a>
+                  <a href="${prefix}pages/Goals_manifestation.html#why">The Root Cause</a>
+                  <a href="${prefix}pages/Goals_manifestation.html#solution">Quantum Leap</a>
+                  <a href="${prefix}pages/Goals_manifestation.html#calendar">Start Now</a>
+                </div>
+              </div>
             </div>
           </div>
           <a href="${prefix}index.html#about">How I Am One Among You</a>
@@ -83,6 +132,20 @@
       document.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); });
       navItem.addEventListener('focusin', open);
       navItem.addEventListener('focusout', function(){ setTimeout(()=>{ if(!navItem.contains(document.activeElement) && !persistedFromHover) close(); },0); });
+      // Secondary submenu behavior (Health submenu)
+      const subParents = navItem.querySelectorAll('.dropdown-menu .has-sub');
+      subParents.forEach(sp => {
+        const link = sp.querySelector('.submenu-toggle');
+        const menu = sp.querySelector('.submenu');
+        function openSub(){ sp.classList.add('open'); }
+        function closeSub(){ sp.classList.remove('open'); }
+        sp.addEventListener('mouseenter', openSub);
+        sp.addEventListener('mouseleave', closeSub);
+        link.addEventListener('focus', openSub);
+        link.addEventListener('blur', function(){ setTimeout(()=>{ if(!sp.contains(document.activeElement)) closeSub(); },0); });
+        // allow clicking the parent link to navigate; small screens may prefer toggling — handle touch
+        link.addEventListener('click', function(e){ /* let normal navigation occur */ });
+      });
     })();
   }
 
